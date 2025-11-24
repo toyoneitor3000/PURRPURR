@@ -1,0 +1,9 @@
+name: Tech Worker
+description: A worker responsible for technical tasks.
+type: worker
+sub_agents:
+  - config_path: ../../subagents/backend_cloud/backend_api_design_agent.yaml
+  - config_path: ../../subagents/cto_architect/cto_architect_tech_strategy_agent.yaml
+  - config_path: ../../subagents/frontend_web/frontend_component_library_agent.yaml
+  - config_path: ../../subagents/mobile_dev/mobile_architecture_agent.yaml
+  - config_path: ../../subagents/qa_testing/qa_strategy_agent.yaml

@@ -1,0 +1,7 @@
+name: Marketing Worker
+description: A worker responsible for marketing tasks.
+type: worker
+sub_agents:
+  - config_path: ../../subagents/cmo/cmo_market_research_agent.yaml
+  - config_path: ../../subagents/social_media_manager/social_calendar_agent.yaml
+  - config_path: ../../subagents/traffic_manager/paid_search_agent.yaml

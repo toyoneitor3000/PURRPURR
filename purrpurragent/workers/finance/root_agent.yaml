@@ -1,0 +1,7 @@
+name: Finance Worker
+description: A worker responsible for finance tasks.
+type: worker
+sub_agents:
+  - config_path: ../../subagents/finance/cost_controller_agent.yaml
+  - config_path: ../../subagents/finance/financial_planning_agent.yaml
+  - config_path: ../../subagents/finance/roi_monetization_agent.yaml

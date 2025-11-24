@@ -1,0 +1,33 @@
+name: copywriter_storyteller_agent
+model: gemini-2.5-flash
+agent_class: LlmAgent
+instruction: 'Eres guardián de la voz Purpur y generas textos para todo el funnel.
+
+
+  Flujo:
+
+  1. Interpreta brief y define tono/objetivo.
+
+  2. Activa sub-agentes para voz de marca, conversión y guiones/storytelling.
+
+  3. Entrega piezas listas o instrucciones detalladas para producción.
+
+  '
+sub_agents:
+  - config_path: ./subagents/copywriter_storyteller/copy_brand_voice_agent.yaml
+  - config_path: ./subagents/copywriter_storyteller/copy_conversion_agent.yaml
+  - config_path: ./subagents/copywriter_storyteller/copy_scriptwriting_agent.yaml
+tools:
+  - name: purrpurragent.tools.command_tools.command_runner
+  - name: purrpurragent.tools.deploy_tools.request_deploy_approval
+  - name: purrpurragent.tools.deploy_tools.vercel_deploy_trigger
+  - name: purrpurragent.tools.deploy_tools.infra_preview
+  - name: purrpurragent.tools.repo_tools.read_files
+  - name: purrpurragent.tools.repo_tools.write_files
+  - name: purrpurragent.tools.repo_tools.search_files
+  - name: purrpurragent.tools.search_tools.google_search
+  - name: purrpurragent.tools.design_tools.design_tokens_sync
+  - name: purrpurragent.tools.design_tools.brand_library_lookup
+  - name: purrpurragent.tools.scaffold_tools.next_scaffolder
+  - name: purrpurragent.tools.scaffold_tools.auth_module_generator
+  - name: purrpurragent.tools.audio_generation_tools.text_to_speech

@@ -1,0 +1,78 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'background-dark': '#1A1A1A',
+        'surface-dark': '#2C2C2C',
+        'card-dark': '#333333',
+        'primary-electric-blue': '#00C2FF',
+        'secondary-vivid-purple': '#A755F7',
+        'text-light': '#F0F0F0',
+        'text-medium': '#B0B0B0',
+        'text-dark': '#757575',
+        'success': '#2ECC71',
+        'warning': '#F1C40F',
+        'error': '#E74C3C',
+      },
+      fontFamily: {
+        heading: ['Outfit', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        mono: ['Fira Code', 'monospace'],
+      },
+      spacing: {
+        'px': '1px',
+        '0': '0',
+        '0.5': '0.125rem',
+        '1': '0.25rem',
+        '2': '0.5rem',
+        '3': '0.75rem',
+        '4': '1rem',
+        '5': '1.25rem',
+        '6': '1.5rem',
+        '8': '2rem',
+        '10': '2.5rem',
+        '12': '3rem',
+        '16': '4rem',
+        '20': '5rem',
+        '24': '6rem',
+        '32': '8rem',
+        '40': '10rem',
+        '48': '12rem',
+        '56': '14rem',
+        '64': '16rem',
+      },
+      borderRadius: {
+        'none': '0',
+        'sm': '0.125rem',
+        'md': '0.25rem',
+        'lg': '0.5rem',
+        'xl': '0.75rem',
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+        'full': '9999px',
+      },
+      boxShadow: {
+        'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+        'none': 'none',
+        'dark-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.5)',
+        'dark-md': '0 4px 6px -1px rgba(0, 0, 0, 0.7), 0 2px 4px -1px rgba(0, 0, 0, 0.6)',
+        'dark-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 4px 6px -2px rgba(0, 0, 0, 0.7)',
+      }
+    },
+  },
+  plugins: [],
+};
+export default config;

@@ -1,0 +1,7 @@
+name: Artist
+agent_class: Agent
+model: gemini-1.5-pro
+instruction: Genera contenido visual o multimedia basado en las directrices del Maker y las tendencias del Hunter.
+tools:
+  - type: Imagen3Tool
+  - type: YouTubeDataAPITool

@@ -1,0 +1,11 @@
+name: CEO_MoneyMaker
+agent_class: WorkflowAgent
+instruction: |
+  1. Llama al Hunter para buscar una tendencia.
+  2. Pasa la tendencia al Maker para crear un post.
+  3. Pasa el post al Critic.
+  4. Si el Critic aprueba, guárdalo en archivo 'listo_para_publicar.txt'.
+sub_agents:
+  - hunter_agent
+  - maker_agent
+  - critic_agent

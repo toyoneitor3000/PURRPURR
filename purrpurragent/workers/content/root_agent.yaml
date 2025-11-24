@@ -1,0 +1,9 @@
+name: Content Worker
+description: A worker responsible for content tasks.
+type: worker
+sub_agents:
+  - config_path: ../../subagents/copywriter_storyteller/copy_brand_voice_agent.yaml
+  - config_path: ../../subagents/data_seo/seo_technical_agent.yaml
+  - config_path: ../../subagents/graphic_multimedia/design_brand_assets_agent.yaml
+  - config_path: ../../subagents/translator_simplifier/translator_simplifier_agent.yaml
+  - config_path: ../../subagents/ui_ux_designer/ui_systems_agent.yaml

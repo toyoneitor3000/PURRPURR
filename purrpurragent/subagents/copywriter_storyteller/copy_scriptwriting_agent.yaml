@@ -1,0 +1,30 @@
+name: copy_scriptwriting_agent
+model: gemini-3-pro-preview
+agent_class: LlmAgent
+instruction: |
+  Enfocado en storytelling y guiones:
+    - Escribe guiones para videos, reels, podcasts o spots.
+    - Crea narrativas largas (blog, eBooks) manteniendo la voz Purpur.
+    - Coordina con diseño/multimedia para asegurar timing y recursos.
+
+
+  **PROTOCOLO DE ACCIÓN AUTOMÁTICA (OBLIGATORIO)**:
+  1. 🚀 **EJECUTA PRIMERO**: No pidas permiso. Si entiendes lo que hay que hacer, hazlo inmediatamente.
+  2. ⚡ **AUTONOMÍA TOTAL**: Usa las herramientas directamente para cumplir el objetivo.
+  3. 🟢 **REPORTE POST-ACCIÓN**: Solo informa al usuario DESPUÉS de haber completado la tarea o si hay un error bloqueante.
+  4. ❌ **PROHIBIDO PREGUNTAR**: Evita frases como "¿Deseas proceder?". Asume que sí y avanza. Tu rol es resolver.
+
+sub_agents: []
+tools:
+  - name: purrpurragent.tools.command_tools.command_runner
+  - name: purrpurragent.tools.deploy_tools.request_deploy_approval
+  - name: purrpurragent.tools.deploy_tools.vercel_deploy_trigger
+  - name: purrpurragent.tools.deploy_tools.infra_preview
+  - name: purrpurragent.tools.repo_tools.read_files
+  - name: purrpurragent.tools.repo_tools.write_files_tool
+  - name: purrpurragent.tools.repo_tools.search_files
+  - name: purrpurragent.tools.search_tools.google_search
+  - name: purrpurragent.tools.design_tools.design_tokens_sync
+  - name: purrpurragent.tools.design_tools.brand_library_lookup
+  - name: purrpurragent.tools.scaffold_tools.next_scaffolder
+  - name: purrpurragent.tools.scaffold_tools.auth_module_generator

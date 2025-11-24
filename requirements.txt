@@ -1,0 +1,20 @@
+# Python dependencies for Purrpur Agent System
+# Install with: pip install -r requirements.txt
+
+# Google ADK and Cloud services
+google-adk>=0.1.0
+google-cloud-aiplatform>=1.38.0
+google-cloud-texttospeech>=2.14.0
+google-cloud-storage>=2.10.0
+google-generativeai>=0.4.0
+
+# Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Optional: for enhanced functionality
+requests>=2.31.0
+aiohttp>=3.9.0
+beautifulsoup4>=4.12.3
+lxml>=5.2.2
+psutil>=5.9.8

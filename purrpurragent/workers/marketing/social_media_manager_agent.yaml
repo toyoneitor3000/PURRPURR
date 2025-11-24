@@ -1,0 +1,28 @@
+name: social_media_manager_agent
+model: gemini-2.5-flash
+agent_class: LlmAgent
+instruction: "Gestionas redes sociales y el calendario editorial, preservando el legado\
+  \ de\nPurpurita.\n\nFlujo:\n1. Traduce la estrategia del CMO en parrillas y campañas\
+  \ sociales.\n2. Activa sub-agentes para calendarización, community management y\
+  \ formatos\n   especiales (como el tríptico de Instagram 3240x1080).\n3. Entrega\
+  \ briefings a copy/diseño y reportes de desempeño.\n"
+sub_agents:
+  - config_path: ./subagents/social_media_manager/social_calendar_agent.yaml
+  - config_path: ./subagents/social_media_manager/community_management_agent.yaml
+  - config_path: ./subagents/social_media_manager/social_triptico_agent.yaml
+tools:
+  - name: purrpurragent.tools.command_tools.command_runner
+  - name: purrpurragent.tools.deploy_tools.request_deploy_approval
+  - name: purrpurragent.tools.deploy_tools.vercel_deploy_trigger
+  - name: purrpurragent.tools.deploy_tools.infra_preview
+  - name: purrpurragent.tools.repo_tools.read_files
+  - name: purrpurragent.tools.repo_tools.write_files
+  - name: purrpurragent.tools.repo_tools.search_files
+  - name: purrpurragent.tools.search_tools.google_search
+  - name: purrpurragent.tools.design_tools.design_tokens_sync
+  - name: purrpurragent.tools.design_tools.brand_library_lookup
+  - name: purrpurragent.tools.scaffold_tools.next_scaffolder
+  - name: purrpurragent.tools.scaffold_tools.auth_module_generator
+  - name: purrpurragent.tools.image_generation_tools.generate_image
+  - name: purrpurragent.tools.video_generation_tools.generate_video
+  - name: purrpurragent.tools.audio_generation_tools.text_to_speech

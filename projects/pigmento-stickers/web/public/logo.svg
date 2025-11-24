@@ -1,0 +1,8 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: Ink Drop / Sticker Peel -->
+  <path d="M40 10C40 10 20 30 20 40C20 51.0457 28.9543 60 40 60C51.0457 60 60 51.0457 60 40C60 30 40 10 40 10ZM40 10C40 10 45 25 45 30" fill="#6366F1"/>
+  <path d="M40 60C28.9543 60 20 51.0457 20 40C20 38 20.5 36 21.5 34.5L35 48L45 58.5C43.5 59.5 41.8 60 40 60Z" fill="#4F46E5" opacity="0.5"/>
+  
+  <!-- Text: Pigmento -->
+  <text x="70" y="42" font-family="sans-serif" font-weight="bold" font-size="32" fill="#0F172A">Pigmento</text>
+</svg>

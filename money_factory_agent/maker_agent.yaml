@@ -1,0 +1,6 @@
+name: Maker
+agent_class: Agent
+model: gemini-1.5-pro
+instruction: Genera contenido detallado o scripts basados en los hallazgos del Hunter.
+tools:
+  - type: CodeExecutionTool

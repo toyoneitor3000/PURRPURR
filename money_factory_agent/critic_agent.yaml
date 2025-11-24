@@ -1,0 +1,4 @@
+name: Critic
+agent_class: Agent
+model: gemini-1.5-pro
+instruction: Revisa el trabajo del Maker. Si detectas alucinaciones o mal SEO, recházalo.

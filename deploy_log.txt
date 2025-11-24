@@ -1,0 +1,879 @@
+🎨 ==========================================
+   PURRPUR AGENT - DEPLOYMENT CLOUD RUN
+==========================================
+
+📋 Proyecto: able-armor-381700
+
+🔐 Verificando autenticación...
+   ✅ Autenticado como: camilotoloza1136@gmail.com
+
+🔧 Configurando proyecto...
+Updated property [core/project].
+
+🔌 Habilitando APIs necesarias...
+Operation "operations/acat.p2-824667413883-90de9a07-e0b5-43ad-b5bc-99abdd8cb374" finished successfully.
+
+🔨 Construyendo imagen Docker (esto puede tomar 5-10 minutos)...
+Creating temporary archive of 189661 file(s) totalling 3.9 GiB before compression.
+Some files were not included in the source upload.
+
+Check the gcloud log [/Users/camilotoloza/.config/gcloud/logs/2025.11.22/23.40.45.968363.log] to see which files and the contents of the
+default gcloudignore file used (see `$ gcloud topic gcloudignore` to learn
+more).
+
+Uploading tarball of [.] to [gs://able-armor-381700_cloudbuild/source/1763872846.344336-d1dccc7d06684b0a9095754d1dd259c2.tgz]
+Created [https://cloudbuild.googleapis.com/v1/projects/able-armor-381700/locations/global/builds/680cbd31-cd70-4e3b-b729-357044c2d7f1].
+Logs are available at [ https://console.cloud.google.com/cloud-build/builds/680cbd31-cd70-4e3b-b729-357044c2d7f1?project=824667413883 ].
+Waiting for build to complete. Polling interval: 1 second(s).
+----------------------------- REMOTE BUILD OUTPUT ------------------------------
+starting build "680cbd31-cd70-4e3b-b729-357044c2d7f1"
+
+FETCHSOURCE
+Fetching storage object: gs://able-armor-381700_cloudbuild/source/1763872846.344336-d1dccc7d06684b0a9095754d1dd259c2.tgz#1763874685660366
+Copying gs://able-armor-381700_cloudbuild/source/1763872846.344336-d1dccc7d06684b0a9095754d1dd259c2.tgz#1763874685660366...
+/ [0 files][    0.0 B/  1.0 GiB]                                                -- [0 files][ 27.8 MiB/  1.0 GiB]                                                \|| [0 files][ 77.9 MiB/  1.0 GiB]                                                // [0 files][127.9 MiB/  1.0 GiB]                                                -\\ [0 files][179.4 MiB/  1.0 GiB]                                                |// [0 files][228.9 MiB/  1.0 GiB]                                                -- [0 files][277.2 MiB/  1.0 GiB]                                                \|| [0 files][325.4 MiB/  1.0 GiB]                                                /-- [0 files][374.3 MiB/  1.0 GiB]                                                \\ [0 files][422.6 MiB/  1.0 GiB]                                                |// [0 files][471.8 MiB/  1.0 GiB]                                                -\\ [0 files][521.0 MiB/  1.0 GiB]   48.6 MiB/s                                   || [0 files][573.6 MiB/  1.0 GiB]   49.5 MiB/s                                   /-- [0 files][626.0 MiB/  1.0 GiB]   50.1 MiB/s                                   \|| [0 files][678.0 MiB/  1.0 GiB]   50.8 MiB/s                                   // [0 files][730.1 MiB/  1.0 GiB]   51.5 MiB/s                                   -\\ [0 files][782.7 MiB/  1.0 GiB]   52.1 MiB/s                                   |// [0 files][834.3 MiB/  1.0 GiB]   52.0 MiB/s                                   -- [0 files][885.6 MiB/  1.0 GiB]   51.6 MiB/s                                   \|| [0 files][937.7 MiB/  1.0 GiB]   51.8 MiB/s                                   /-- [0 files][993.3 MiB/  1.0 GiB]   52.4 MiB/s                                   \\ [1 files][  1.0 GiB/  1.0 GiB]   53.0 MiB/s                                   
+Operation completed over 1 objects/1.0 GiB.
+BUILD
+Already have image (with digest): gcr.io/cloud-builders/gcb-internal
+Sending build context to Docker daemon    956MB
+Step 1/12 : FROM python:3.11-slim
+3.11-slim: Pulling from library/python
+0e4bc2bd6656: Pulling fs layer
+22b63e76fde1: Pulling fs layer
+b3dd773c3296: Pulling fs layer
+1771569cc129: Pulling fs layer
+1771569cc129: Download complete
+b3dd773c3296: Verifying Checksum
+b3dd773c3296: Download complete
+22b63e76fde1: Verifying Checksum
+22b63e76fde1: Download complete
+0e4bc2bd6656: Verifying Checksum
+0e4bc2bd6656: Download complete
+0e4bc2bd6656: Pull complete
+22b63e76fde1: Pull complete
+b3dd773c3296: Pull complete
+1771569cc129: Pull complete
+Digest: sha256:193fdd0bbcb3d2ae612bd6cc3548d2f7c78d65b549fcaa8af75624c47474444d
+Status: Downloaded newer image for python:3.11-slim
+ ---> 040af88f5bce
+Step 2/12 : WORKDIR /app
+ ---> Running in 1ce974a16c64
+Removing intermediate container 1ce974a16c64
+ ---> 190d9205a49f
+Step 3/12 : RUN apt-get update && apt-get install -y     git     && rm -rf /var/lib/apt/lists/*
+ ---> Running in 45266b5f34b0
+Hit:1 http://deb.debian.org/debian trixie InRelease
+Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9670 kB]
+Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [5412 B]
+Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [71.8 kB]
+Fetched 9838 kB in 1s (7500 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  git-man krb5-locales less libbrotli1 libcbor0.10 libcom-err2
+  libcurl3t64-gnutls libedit2 liberror-perl libexpat1 libfido2-1
+  libgdbm-compat4t64 libgnutls30t64 libgssapi-krb5-2 libidn2-0 libk5crypto3
+  libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14
+  libnghttp3-9 libngtcp2-16 libngtcp2-crypto-gnutls8 libp11-kit0 libperl5.40
+  libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db
+  libssh2-1t64 libtasn1-6 libunistring5 libx11-6 libx11-data libxau6 libxcb1
+  libxdmcp6 libxext6 libxmuu1 openssh-client patch perl perl-modules-5.40
+  publicsuffix xauth
+Suggested packages:
+  gettext-base git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki
+  git-svn gnutls-bin krb5-doc krb5-user sensible-utils
+  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+  libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql keychain
+  libpam-ssh monkeysphere ssh-askpass ed diffutils-doc perl-doc
+  libterm-readline-gnu-perl | libterm-readline-perl-perl make
+  libtap-harness-archive-perl
+The following NEW packages will be installed:
+  git git-man krb5-locales less libbrotli1 libcbor0.10 libcom-err2
+  libcurl3t64-gnutls libedit2 liberror-perl libexpat1 libfido2-1
+  libgdbm-compat4t64 libgnutls30t64 libgssapi-krb5-2 libidn2-0 libk5crypto3
+  libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14
+  libnghttp3-9 libngtcp2-16 libngtcp2-crypto-gnutls8 libp11-kit0 libperl5.40
+  libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db
+  libssh2-1t64 libtasn1-6 libunistring5 libx11-6 libx11-data libxau6 libxcb1
+  libxdmcp6 libxext6 libxmuu1 openssh-client patch perl perl-modules-5.40
+  publicsuffix xauth
+0 upgraded, 49 newly installed, 0 to remove and 0 not upgraded.
+Need to get 27.1 MB of archives.
+After this operation, 131 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian trixie/main amd64 libexpat1 amd64 2.7.1-2 [108 kB]
+Get:2 http://deb.debian.org/debian trixie/main amd64 less amd64 668-1 [161 kB]
+Get:3 http://deb.debian.org/debian trixie/main amd64 krb5-locales all 1.21.3-5 [101 kB]
+Get:4 http://deb.debian.org/debian trixie/main amd64 libedit2 amd64 3.1-20250104-1 [93.8 kB]
+Get:5 http://deb.debian.org/debian trixie/main amd64 libcbor0.10 amd64 0.10.2-2 [28.3 kB]
+Get:6 http://deb.debian.org/debian trixie/main amd64 libfido2-1 amd64 1.15.0-1+b1 [78.7 kB]
+Get:7 http://deb.debian.org/debian trixie/main amd64 libkrb5support0 amd64 1.21.3-5 [33.0 kB]
+Get:8 http://deb.debian.org/debian trixie/main amd64 libcom-err2 amd64 1.47.2-3+b3 [25.0 kB]
+Get:9 http://deb.debian.org/debian trixie/main amd64 libk5crypto3 amd64 1.21.3-5 [81.5 kB]
+Get:10 http://deb.debian.org/debian trixie/main amd64 libkeyutils1 amd64 1.6.3-6 [9456 B]
+Get:11 http://deb.debian.org/debian trixie/main amd64 libkrb5-3 amd64 1.21.3-5 [326 kB]
+Get:12 http://deb.debian.org/debian trixie/main amd64 libgssapi-krb5-2 amd64 1.21.3-5 [138 kB]
+Get:13 http://deb.debian.org/debian trixie/main amd64 openssh-client amd64 1:10.0p1-7 [985 kB]
+Get:14 http://deb.debian.org/debian trixie/main amd64 perl-modules-5.40 all 5.40.1-6 [3019 kB]
+Get:15 http://deb.debian.org/debian trixie/main amd64 libgdbm-compat4t64 amd64 1.24-2 [50.3 kB]
+Get:16 http://deb.debian.org/debian trixie/main amd64 libperl5.40 amd64 5.40.1-6 [4341 kB]
+Get:17 http://deb.debian.org/debian trixie/main amd64 perl amd64 5.40.1-6 [267 kB]
+Get:18 http://deb.debian.org/debian trixie/main amd64 libbrotli1 amd64 1.1.0-2+b7 [307 kB]
+Get:19 http://deb.debian.org/debian trixie/main amd64 libunistring5 amd64 1.3-2 [477 kB]
+Get:20 http://deb.debian.org/debian trixie/main amd64 libidn2-0 amd64 2.3.8-2 [109 kB]
+Get:21 http://deb.debian.org/debian trixie/main amd64 libp11-kit0 amd64 0.25.5-3 [425 kB]
+Get:22 http://deb.debian.org/debian trixie/main amd64 libtasn1-6 amd64 4.20.0-2 [49.9 kB]
+Get:23 http://deb.debian.org/debian trixie/main amd64 libgnutls30t64 amd64 3.8.9-3 [1465 kB]
+Get:24 http://deb.debian.org/debian trixie/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-9 [19.8 kB]
+Get:25 http://deb.debian.org/debian trixie/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-9 [57.5 kB]
+Get:26 http://deb.debian.org/debian trixie/main amd64 libldap2 amd64 2.6.10+dfsg-1 [194 kB]
+Get:27 http://deb.debian.org/debian trixie/main amd64 libnghttp2-14 amd64 1.64.0-1.1 [76.0 kB]
+Get:28 http://deb.debian.org/debian trixie/main amd64 libnghttp3-9 amd64 1.8.0-1 [67.7 kB]
+Get:29 http://deb.debian.org/debian trixie/main amd64 libngtcp2-16 amd64 1.11.0-1 [131 kB]
+Get:30 http://deb.debian.org/debian trixie/main amd64 libngtcp2-crypto-gnutls8 amd64 1.11.0-1 [29.3 kB]
+Get:31 http://deb.debian.org/debian trixie/main amd64 libpsl5t64 amd64 0.21.2-1.1+b1 [57.2 kB]
+Get:32 http://deb.debian.org/debian trixie/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b5 [58.8 kB]
+Get:33 http://deb.debian.org/debian trixie/main amd64 libssh2-1t64 amd64 1.11.1-1 [245 kB]
+Get:34 http://deb.debian.org/debian trixie/main amd64 libcurl3t64-gnutls amd64 8.14.1-2+deb13u2 [383 kB]
+Get:35 http://deb.debian.org/debian trixie/main amd64 liberror-perl all 0.17030-1 [26.9 kB]
+Get:36 http://deb.debian.org/debian trixie/main amd64 git-man all 1:2.47.3-0+deb13u1 [2205 kB]
+Get:37 http://deb.debian.org/debian trixie/main amd64 git amd64 1:2.47.3-0+deb13u1 [8862 kB]
+Get:38 http://deb.debian.org/debian trixie/main amd64 libldap-common all 2.6.10+dfsg-1 [35.1 kB]
+Get:39 http://deb.debian.org/debian trixie/main amd64 libsasl2-modules amd64 2.1.28+dfsg1-9 [66.7 kB]
+Get:40 http://deb.debian.org/debian trixie/main amd64 libxau6 amd64 1:1.0.11-1 [20.4 kB]
+Get:41 http://deb.debian.org/debian trixie/main amd64 libxdmcp6 amd64 1:1.1.5-1 [27.8 kB]
+Get:42 http://deb.debian.org/debian trixie/main amd64 libxcb1 amd64 1.17.0-2+b1 [144 kB]
+Get:43 http://deb.debian.org/debian trixie/main amd64 libx11-data all 2:1.8.12-1 [343 kB]
+Get:44 http://deb.debian.org/debian trixie/main amd64 libx11-6 amd64 2:1.8.12-1 [815 kB]
+Get:45 http://deb.debian.org/debian trixie/main amd64 libxext6 amd64 2:1.3.4-1+b3 [50.4 kB]
+Get:46 http://deb.debian.org/debian trixie/main amd64 libxmuu1 amd64 2:1.1.3-3+b4 [21.9 kB]
+Get:47 http://deb.debian.org/debian trixie/main amd64 patch amd64 2.8-2 [134 kB]
+Get:48 http://deb.debian.org/debian trixie/main amd64 publicsuffix all 20250328.1952-0.1 [296 kB]
+Get:49 http://deb.debian.org/debian trixie/main amd64 xauth amd64 1:1.1.2-1.1 [35.9 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 49.)
+debconf: falling back to frontend: Teletype
+[0m[91mdebconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+[0mFetched 27.1 MB in 0s (89.5 MB/s)
+Selecting previously unselected package libexpat1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5644 files and directories currently installed.)
+Preparing to unpack .../00-libexpat1_2.7.1-2_amd64.deb ...
+Unpacking libexpat1:amd64 (2.7.1-2) ...
+Selecting previously unselected package less.
+Preparing to unpack .../01-less_668-1_amd64.deb ...
+Unpacking less (668-1) ...
+Selecting previously unselected package krb5-locales.
+Preparing to unpack .../02-krb5-locales_1.21.3-5_all.deb ...
+Unpacking krb5-locales (1.21.3-5) ...
+Selecting previously unselected package libedit2:amd64.
+Preparing to unpack .../03-libedit2_3.1-20250104-1_amd64.deb ...
+Unpacking libedit2:amd64 (3.1-20250104-1) ...
+Selecting previously unselected package libcbor0.10:amd64.
+Preparing to unpack .../04-libcbor0.10_0.10.2-2_amd64.deb ...
+Unpacking libcbor0.10:amd64 (0.10.2-2) ...
+Selecting previously unselected package libfido2-1:amd64.
+Preparing to unpack .../05-libfido2-1_1.15.0-1+b1_amd64.deb ...
+Unpacking libfido2-1:amd64 (1.15.0-1+b1) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../06-libkrb5support0_1.21.3-5_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.21.3-5) ...
+Selecting previously unselected package libcom-err2:amd64.
+Preparing to unpack .../07-libcom-err2_1.47.2-3+b3_amd64.deb ...
+Unpacking libcom-err2:amd64 (1.47.2-3+b3) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../08-libk5crypto3_1.21.3-5_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.21.3-5) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../09-libkeyutils1_1.6.3-6_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6.3-6) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../10-libkrb5-3_1.21.3-5_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.21.3-5) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../11-libgssapi-krb5-2_1.21.3-5_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.21.3-5) ...
+Selecting previously unselected package openssh-client.
+Preparing to unpack .../12-openssh-client_1%3a10.0p1-7_amd64.deb ...
+Unpacking openssh-client (1:10.0p1-7) ...
+Selecting previously unselected package perl-modules-5.40.
+Preparing to unpack .../13-perl-modules-5.40_5.40.1-6_all.deb ...
+Unpacking perl-modules-5.40 (5.40.1-6) ...
+Selecting previously unselected package libgdbm-compat4t64:amd64.
+Preparing to unpack .../14-libgdbm-compat4t64_1.24-2_amd64.deb ...
+Unpacking libgdbm-compat4t64:amd64 (1.24-2) ...
+Selecting previously unselected package libperl5.40:amd64.
+Preparing to unpack .../15-libperl5.40_5.40.1-6_amd64.deb ...
+Unpacking libperl5.40:amd64 (5.40.1-6) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../16-perl_5.40.1-6_amd64.deb ...
+Unpacking perl (5.40.1-6) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../17-libbrotli1_1.1.0-2+b7_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.1.0-2+b7) ...
+Selecting previously unselected package libunistring5:amd64.
+Preparing to unpack .../18-libunistring5_1.3-2_amd64.deb ...
+Unpacking libunistring5:amd64 (1.3-2) ...
+Selecting previously unselected package libidn2-0:amd64.
+Preparing to unpack .../19-libidn2-0_2.3.8-2_amd64.deb ...
+Unpacking libidn2-0:amd64 (2.3.8-2) ...
+Selecting previously unselected package libp11-kit0:amd64.
+Preparing to unpack .../20-libp11-kit0_0.25.5-3_amd64.deb ...
+Unpacking libp11-kit0:amd64 (0.25.5-3) ...
+Selecting previously unselected package libtasn1-6:amd64.
+Preparing to unpack .../21-libtasn1-6_4.20.0-2_amd64.deb ...
+Unpacking libtasn1-6:amd64 (4.20.0-2) ...
+Selecting previously unselected package libgnutls30t64:amd64.
+Preparing to unpack .../22-libgnutls30t64_3.8.9-3_amd64.deb ...
+Unpacking libgnutls30t64:amd64 (3.8.9-3) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../23-libsasl2-modules-db_2.1.28+dfsg1-9_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../24-libsasl2-2_2.1.28+dfsg1-9_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+Selecting previously unselected package libldap2:amd64.
+Preparing to unpack .../25-libldap2_2.6.10+dfsg-1_amd64.deb ...
+Unpacking libldap2:amd64 (2.6.10+dfsg-1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../26-libnghttp2-14_1.64.0-1.1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.64.0-1.1) ...
+Selecting previously unselected package libnghttp3-9:amd64.
+Preparing to unpack .../27-libnghttp3-9_1.8.0-1_amd64.deb ...
+Unpacking libnghttp3-9:amd64 (1.8.0-1) ...
+Selecting previously unselected package libngtcp2-16:amd64.
+Preparing to unpack .../28-libngtcp2-16_1.11.0-1_amd64.deb ...
+Unpacking libngtcp2-16:amd64 (1.11.0-1) ...
+Selecting previously unselected package libngtcp2-crypto-gnutls8:amd64.
+Preparing to unpack .../29-libngtcp2-crypto-gnutls8_1.11.0-1_amd64.deb ...
+Unpacking libngtcp2-crypto-gnutls8:amd64 (1.11.0-1) ...
+Selecting previously unselected package libpsl5t64:amd64.
+Preparing to unpack .../30-libpsl5t64_0.21.2-1.1+b1_amd64.deb ...
+Unpacking libpsl5t64:amd64 (0.21.2-1.1+b1) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../31-librtmp1_2.4+20151223.gitfa8646d.1-2+b5_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+Selecting previously unselected package libssh2-1t64:amd64.
+Preparing to unpack .../32-libssh2-1t64_1.11.1-1_amd64.deb ...
+Unpacking libssh2-1t64:amd64 (1.11.1-1) ...
+Selecting previously unselected package libcurl3t64-gnutls:amd64.
+Preparing to unpack .../33-libcurl3t64-gnutls_8.14.1-2+deb13u2_amd64.deb ...
+Unpacking libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u2) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../34-liberror-perl_0.17030-1_all.deb ...
+Unpacking liberror-perl (0.17030-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../35-git-man_1%3a2.47.3-0+deb13u1_all.deb ...
+Unpacking git-man (1:2.47.3-0+deb13u1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../36-git_1%3a2.47.3-0+deb13u1_amd64.deb ...
+Unpacking git (1:2.47.3-0+deb13u1) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../37-libldap-common_2.6.10+dfsg-1_all.deb ...
+Unpacking libldap-common (2.6.10+dfsg-1) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../38-libsasl2-modules_2.1.28+dfsg1-9_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.28+dfsg1-9) ...
+Selecting previously unselected package libxau6:amd64.
+Preparing to unpack .../39-libxau6_1%3a1.0.11-1_amd64.deb ...
+Unpacking libxau6:amd64 (1:1.0.11-1) ...
+Selecting previously unselected package libxdmcp6:amd64.
+Preparing to unpack .../40-libxdmcp6_1%3a1.1.5-1_amd64.deb ...
+Unpacking libxdmcp6:amd64 (1:1.1.5-1) ...
+Selecting previously unselected package libxcb1:amd64.
+Preparing to unpack .../41-libxcb1_1.17.0-2+b1_amd64.deb ...
+Unpacking libxcb1:amd64 (1.17.0-2+b1) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../42-libx11-data_2%3a1.8.12-1_all.deb ...
+Unpacking libx11-data (2:1.8.12-1) ...
+Selecting previously unselected package libx11-6:amd64.
+Preparing to unpack .../43-libx11-6_2%3a1.8.12-1_amd64.deb ...
+Unpacking libx11-6:amd64 (2:1.8.12-1) ...
+Selecting previously unselected package libxext6:amd64.
+Preparing to unpack .../44-libxext6_2%3a1.3.4-1+b3_amd64.deb ...
+Unpacking libxext6:amd64 (2:1.3.4-1+b3) ...
+Selecting previously unselected package libxmuu1:amd64.
+Preparing to unpack .../45-libxmuu1_2%3a1.1.3-3+b4_amd64.deb ...
+Unpacking libxmuu1:amd64 (2:1.1.3-3+b4) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../46-patch_2.8-2_amd64.deb ...
+Unpacking patch (2.8-2) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../47-publicsuffix_20250328.1952-0.1_all.deb ...
+Unpacking publicsuffix (20250328.1952-0.1) ...
+Selecting previously unselected package xauth.
+Preparing to unpack .../48-xauth_1%3a1.1.2-1.1_amd64.deb ...
+Unpacking xauth (1:1.1.2-1.1) ...
+Setting up libexpat1:amd64 (2.7.1-2) ...
+Setting up libxau6:amd64 (1:1.0.11-1) ...
+Setting up libxdmcp6:amd64 (1:1.1.5-1) ...
+Setting up libkeyutils1:amd64 (1.6.3-6) ...
+Setting up libxcb1:amd64 (1.17.0-2+b1) ...
+Setting up libgdbm-compat4t64:amd64 (1.24-2) ...
+Setting up libcbor0.10:amd64 (0.10.2-2) ...
+Setting up libbrotli1:amd64 (1.1.0-2+b7) ...
+Setting up libedit2:amd64 (3.1-20250104-1) ...
+Setting up libsasl2-modules:amd64 (2.1.28+dfsg1-9) ...
+Setting up libnghttp2-14:amd64 (1.64.0-1.1) ...
+Setting up less (668-1) ...
+Setting up krb5-locales (1.21.3-5) ...
+Setting up libcom-err2:amd64 (1.47.2-3+b3) ...
+Setting up libldap-common (2.6.10+dfsg-1) ...
+Setting up libkrb5support0:amd64 (1.21.3-5) ...
+Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+Setting up libx11-data (2:1.8.12-1) ...
+Setting up libp11-kit0:amd64 (0.25.5-3) ...
+Setting up libunistring5:amd64 (1.3-2) ...
+Setting up patch (2.8-2) ...
+Setting up libk5crypto3:amd64 (1.21.3-5) ...
+Setting up libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+Setting up libnghttp3-9:amd64 (1.8.0-1) ...
+Setting up perl-modules-5.40 (5.40.1-6) ...
+Setting up libtasn1-6:amd64 (4.20.0-2) ...
+Setting up git-man (1:2.47.3-0+deb13u1) ...
+Setting up libx11-6:amd64 (2:1.8.12-1) ...
+Setting up libngtcp2-16:amd64 (1.11.0-1) ...
+Setting up libkrb5-3:amd64 (1.21.3-5) ...
+Setting up libssh2-1t64:amd64 (1.11.1-1) ...
+Setting up libfido2-1:amd64 (1.15.0-1+b1) ...
+Setting up publicsuffix (20250328.1952-0.1) ...
+Setting up libldap2:amd64 (2.6.10+dfsg-1) ...
+Setting up libxmuu1:amd64 (2:1.1.3-3+b4) ...
+Setting up libxext6:amd64 (2:1.3.4-1+b3) ...
+Setting up libidn2-0:amd64 (2.3.8-2) ...
+Setting up libperl5.40:amd64 (5.40.1-6) ...
+Setting up perl (5.40.1-6) ...
+Setting up libgssapi-krb5-2:amd64 (1.21.3-5) ...
+Setting up xauth (1:1.1.2-1.1) ...
+Setting up libgnutls30t64:amd64 (3.8.9-3) ...
+Setting up openssh-client (1:10.0p1-7) ...
+Setting up libpsl5t64:amd64 (0.21.2-1.1+b1) ...
+Setting up liberror-perl (0.17030-1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+Setting up libngtcp2-crypto-gnutls8:amd64 (1.11.0-1) ...
+Setting up libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u2) ...
+Setting up git (1:2.47.3-0+deb13u1) ...
+Processing triggers for libc-bin (2.41-12) ...
+Removing intermediate container 45266b5f34b0
+ ---> b77d99ffc9b1
+Step 4/12 : COPY requirements.txt .
+ ---> ec1be9275756
+Step 5/12 : RUN pip install --no-cache-dir -r requirements.txt
+ ---> Running in 2ead330b7cfb
+Collecting google-adk>=0.1.0 (from -r requirements.txt (line 5))
+  Downloading google_adk-1.19.0-py3-none-any.whl.metadata (13 kB)
+Collecting google-cloud-aiplatform>=1.38.0 (from -r requirements.txt (line 6))
+  Downloading google_cloud_aiplatform-1.128.0-py2.py3-none-any.whl.metadata (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.1/46.1 kB 49.8 MB/s eta 0:00:00
+Collecting google-cloud-texttospeech>=2.14.0 (from -r requirements.txt (line 7))
+  Downloading google_cloud_texttospeech-2.33.0-py3-none-any.whl.metadata (10.0 kB)
+Collecting google-cloud-storage>=2.10.0 (from -r requirements.txt (line 8))
+  Downloading google_cloud_storage-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting pyyaml>=6.0 (from -r requirements.txt (line 11))
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting python-dotenv>=1.0.0 (from -r requirements.txt (line 12))
+  Downloading python_dotenv-1.2.1-py3-none-any.whl.metadata (25 kB)
+Collecting requests>=2.31.0 (from -r requirements.txt (line 15))
+  Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting aiohttp>=3.9.0 (from -r requirements.txt (line 16))
+  Downloading aiohttp-3.13.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
+Collecting aiosqlite>=0.21.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading aiosqlite-0.21.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting anyio<5.0.0,>=4.9.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading anyio-4.11.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting authlib<2.0.0,>=1.5.1 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading authlib-1.6.5-py2.py3-none-any.whl.metadata (9.8 kB)
+Collecting click<9.0.0,>=8.1.8 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting fastapi<0.119.0,>=0.115.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading fastapi-0.118.3-py3-none-any.whl.metadata (28 kB)
+Collecting google-api-python-client<3.0.0,>=2.157.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_api_python_client-2.187.0-py3-none-any.whl.metadata (7.0 kB)
+Collecting google-cloud-bigquery-storage>=2.0.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_bigquery_storage-2.34.0-py3-none-any.whl.metadata (10 kB)
+Collecting google-cloud-bigquery>=2.2.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_bigquery-3.38.0-py3-none-any.whl.metadata (8.0 kB)
+Collecting google-cloud-bigtable>=2.32.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_bigtable-2.34.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting google-cloud-discoveryengine<0.14.0,>=0.13.12 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_discoveryengine-0.13.12-py3-none-any.whl.metadata (9.6 kB)
+Collecting google-cloud-secret-manager<3.0.0,>=2.22.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_secret_manager-2.25.0-py3-none-any.whl.metadata (9.8 kB)
+Collecting google-cloud-spanner<4.0.0,>=3.56.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_spanner-3.59.0-py3-none-any.whl.metadata (11 kB)
+Collecting google-cloud-speech<3.0.0,>=2.30.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_speech-2.34.0-py3-none-any.whl.metadata (9.8 kB)
+Collecting google-genai<2.0.0,>=1.45.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_genai-1.52.0-py3-none-any.whl.metadata (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.8/46.8 kB 150.9 MB/s eta 0:00:00
+Collecting graphviz<1.0.0,>=0.20.2 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading graphviz-0.21-py3-none-any.whl.metadata (12 kB)
+Collecting jsonschema<5.0.0,>=4.23.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting mcp<2.0.0,>=1.8.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading mcp-1.22.0-py3-none-any.whl.metadata (85 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 85.9/85.9 kB 215.8 MB/s eta 0:00:00
+Collecting opentelemetry-api<=1.37.0,>=1.37.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_api-1.37.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-exporter-gcp-logging<2.0.0,>=1.9.0a0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_exporter_gcp_logging-1.11.0a0-py3-none-any.whl.metadata (4.8 kB)
+Collecting opentelemetry-exporter-gcp-monitoring<2.0.0,>=1.9.0a0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_exporter_gcp_monitoring-1.11.0a0-py3-none-any.whl.metadata (4.0 kB)
+Collecting opentelemetry-exporter-gcp-trace<2.0.0,>=1.9.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_exporter_gcp_trace-1.11.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting opentelemetry-exporter-otlp-proto-http>=1.36.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_exporter_otlp_proto_http-1.38.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-resourcedetector-gcp<2.0.0,>=1.9.0a0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_resourcedetector_gcp-1.11.0a0-py3-none-any.whl.metadata (3.2 kB)
+Collecting opentelemetry-sdk<=1.37.0,>=1.37.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_sdk-1.37.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting pyarrow>=14.0.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading pyarrow-22.0.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.2 kB)
+Collecting pydantic<3.0.0,>=2.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading pydantic-2.12.4-py3-none-any.whl.metadata (89 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 226.9 MB/s eta 0:00:00
+Collecting python-dateutil<3.0.0,>=2.9.0.post0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting sqlalchemy-spanner>=1.14.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading sqlalchemy_spanner-1.17.1-py3-none-any.whl.metadata (18 kB)
+Collecting sqlalchemy<3.0.0,>=2.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading sqlalchemy-2.0.44-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.5 kB)
+Collecting starlette<1.0.0,>=0.46.2 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading starlette-0.50.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting tenacity<10.0.0,>=9.0.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+Collecting typing-extensions<5,>=4.5 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting tzlocal<6.0,>=5.3 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading tzlocal-5.3.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting uvicorn<1.0.0,>=0.34.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading uvicorn-0.38.0-py3-none-any.whl.metadata (6.8 kB)
+Collecting watchdog<7.0.0,>=6.0.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.3/44.3 kB 192.7 MB/s eta 0:00:00
+Collecting websockets<16.0.0,>=15.0.1 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,<3.0.0,>=1.34.1 (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,<3.0.0,>=1.34.1->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading google_api_core-2.28.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting google-auth<3.0.0,>=2.14.1 (from google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading google_auth-2.43.0-py2.py3-none-any.whl.metadata (6.6 kB)
+Collecting proto-plus<2.0.0,>=1.22.3 (from google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading proto_plus-1.26.1-py3-none-any.whl.metadata (2.2 kB)
+Collecting protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.20.2 (from google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading protobuf-6.33.1-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting packaging>=14.3 (from google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting google-cloud-resource-manager<3.0.0,>=1.3.3 (from google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading google_cloud_resource_manager-1.15.0-py3-none-any.whl.metadata (9.9 kB)
+Collecting shapely<3.0.0 (from google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading shapely-2.1.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.8 kB)
+Collecting docstring_parser<1 (from google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading docstring_parser-0.17.0-py3-none-any.whl.metadata (3.5 kB)
+Collecting grpcio<2.0.0,>=1.33.2 (from google-cloud-texttospeech>=2.14.0->-r requirements.txt (line 7))
+  Downloading grpcio-1.76.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.7 kB)
+Collecting google-cloud-core<3.0.0,>=2.4.2 (from google-cloud-storage>=2.10.0->-r requirements.txt (line 8))
+  Downloading google_cloud_core-2.5.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting google-resumable-media<3.0.0,>=2.7.2 (from google-cloud-storage>=2.10.0->-r requirements.txt (line 8))
+  Downloading google_resumable_media-2.8.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting google-crc32c<2.0.0,>=1.1.3 (from google-cloud-storage>=2.10.0->-r requirements.txt (line 8))
+  Downloading google_crc32c-1.7.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.3 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->-r requirements.txt (line 15))
+  Downloading charset_normalizer-3.4.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+Collecting idna<4,>=2.5 (from requests>=2.31.0->-r requirements.txt (line 15))
+  Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting urllib3<3,>=1.21.1 (from requests>=2.31.0->-r requirements.txt (line 15))
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests>=2.31.0->-r requirements.txt (line 15))
+  Downloading certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp>=3.9.0->-r requirements.txt (line 16))
+  Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp>=3.9.0->-r requirements.txt (line 16))
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting attrs>=17.3.0 (from aiohttp>=3.9.0->-r requirements.txt (line 16))
+  Downloading attrs-25.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp>=3.9.0->-r requirements.txt (line 16))
+  Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp>=3.9.0->-r requirements.txt (line 16))
+  Downloading multidict-6.7.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+Collecting propcache>=0.2.0 (from aiohttp>=3.9.0->-r requirements.txt (line 16))
+  Downloading propcache-0.4.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (13 kB)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp>=3.9.0->-r requirements.txt (line 16))
+  Downloading yarl-1.22.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (75 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.1/75.1 kB 201.3 MB/s eta 0:00:00
+Collecting sniffio>=1.1 (from anyio<5.0.0,>=4.9.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting cryptography (from authlib<2.0.0,>=1.5.1->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading cryptography-46.0.3-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Collecting starlette<1.0.0,>=0.46.2 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading starlette-0.48.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting googleapis-common-protos<2.0.0,>=1.56.2 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,<3.0.0,>=1.34.1->google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,<3.0.0,>=1.34.1->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading googleapis_common_protos-1.72.0-py3-none-any.whl.metadata (9.4 kB)
+Collecting grpcio-status<2.0.0,>=1.33.2 (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,<3.0.0,>=1.34.1->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading grpcio_status-1.76.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client<3.0.0,>=2.157.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading httplib2-0.31.0-py3-none-any.whl.metadata (2.2 kB)
+Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client<3.0.0,>=2.157.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_auth_httplib2-0.2.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting uritemplate<5,>=3.0.1 (from google-api-python-client<3.0.0,>=2.157.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting cachetools<7.0,>=2.0.0 (from google-auth<3.0.0,>=2.14.1->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading cachetools-6.2.2-py3-none-any.whl.metadata (5.6 kB)
+Collecting pyasn1-modules>=0.2.1 (from google-auth<3.0.0,>=2.14.1->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting rsa<5,>=3.1.4 (from google-auth<3.0.0,>=2.14.1->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting cloudpickle<4.0,>=3.0 (from google-cloud-aiplatform[agent-engines]<2.0.0,>=1.125.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting google-cloud-trace<2 (from google-cloud-aiplatform[agent-engines]<2.0.0,>=1.125.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_trace-1.17.0-py3-none-any.whl.metadata (9.8 kB)
+Collecting google-cloud-logging<4 (from google-cloud-aiplatform[agent-engines]<2.0.0,>=1.125.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_logging-3.12.1-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting grpc-google-iam-v1<1.0.0,>=0.12.4 (from google-cloud-bigtable>=2.32.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading grpc_google_iam_v1-0.14.3-py3-none-any.whl.metadata (9.2 kB)
+Collecting sqlparse>=0.4.4 (from google-cloud-spanner<4.0.0,>=3.56.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading sqlparse-0.5.3-py3-none-any.whl.metadata (3.9 kB)
+Collecting grpc-interceptor>=0.15.4 (from google-cloud-spanner<4.0.0,>=3.56.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading grpc_interceptor-0.15.4-py3-none-any.whl.metadata (8.4 kB)
+Collecting httpx<1.0.0,>=0.28.1 (from google-genai<2.0.0,>=1.45.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema<5.0.0,>=4.23.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema<5.0.0,>=4.23.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema<5.0.0,>=4.23.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading rpds_py-0.29.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting httpx-sse>=0.4 (from mcp<2.0.0,>=1.8.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
+Collecting pydantic-settings>=2.5.2 (from mcp<2.0.0,>=1.8.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading pydantic_settings-2.12.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp<2.0.0,>=1.8.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading PyJWT-2.10.1-py3-none-any.whl.metadata (4.0 kB)
+Collecting python-multipart>=0.0.9 (from mcp<2.0.0,>=1.8.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+Collecting sse-starlette>=1.6.1 (from mcp<2.0.0,>=1.8.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading sse_starlette-3.0.3-py3-none-any.whl.metadata (12 kB)
+Collecting typing-inspection>=0.4.1 (from mcp<2.0.0,>=1.8.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting importlib-metadata<8.8.0,>=6.0 (from opentelemetry-api<=1.37.0,>=1.37.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading importlib_metadata-8.7.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting google-cloud-monitoring~=2.0 (from opentelemetry-exporter-gcp-monitoring<2.0.0,>=1.9.0a0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_monitoring-2.28.0-py3-none-any.whl.metadata (10 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.38.0 (from opentelemetry-exporter-otlp-proto-http>=1.36.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_exporter_otlp_proto_common-1.38.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.38.0 (from opentelemetry-exporter-otlp-proto-http>=1.36.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_proto-1.38.0-py3-none-any.whl.metadata (2.3 kB)
+INFO: pip is looking at multiple versions of opentelemetry-exporter-otlp-proto-http to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-exporter-otlp-proto-http>=1.36.0 (from google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_exporter_otlp_proto_http-1.37.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.37.0 (from opentelemetry-exporter-otlp-proto-http>=1.36.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_exporter_otlp_proto_common-1.37.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.37.0 (from opentelemetry-exporter-otlp-proto-http>=1.36.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_proto-1.37.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-semantic-conventions==0.58b0 (from opentelemetry-sdk<=1.37.0,>=1.37.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading opentelemetry_semantic_conventions-0.58b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.41.5 (from pydantic<3.0.0,>=2.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting six>=1.5 (from python-dateutil<3.0.0,>=2.9.0.post0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting numpy>=1.21 (from shapely<3.0.0->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 214.6 MB/s eta 0:00:00
+Collecting greenlet>=1 (from sqlalchemy<3.0.0,>=2.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading greenlet-3.2.4-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting alembic (from sqlalchemy-spanner>=1.14.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading alembic-1.17.2-py3-none-any.whl.metadata (7.2 kB)
+Collecting h11>=0.8 (from uvicorn<1.0.0,>=0.34.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting google-cloud-appengine-logging<2.0.0,>=0.1.3 (from google-cloud-logging<4->google-cloud-aiplatform[agent-engines]<2.0.0,>=1.125.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_appengine_logging-1.7.0-py3-none-any.whl.metadata (10 kB)
+Collecting google-cloud-audit-log<1.0.0,>=0.3.1 (from google-cloud-logging<4->google-cloud-aiplatform[agent-engines]<2.0.0,>=1.125.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading google_cloud_audit_log-0.4.0-py3-none-any.whl.metadata (9.3 kB)
+Collecting pyparsing<4,>=3.0.4 (from httplib2<1.0.0,>=0.19.0->google-api-python-client<3.0.0,>=2.157.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading pyparsing-3.2.5-py3-none-any.whl.metadata (5.0 kB)
+Collecting httpcore==1.* (from httpx<1.0.0,>=0.28.1->google-genai<2.0.0,>=1.45.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting zipp>=3.20 (from importlib-metadata<8.8.0,>=6.0->opentelemetry-api<=1.37.0,>=1.37.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth<3.0.0,>=2.14.1->google-cloud-aiplatform>=1.38.0->-r requirements.txt (line 6))
+  Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting cffi>=2.0.0 (from cryptography->authlib<2.0.0,>=1.5.1->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading cffi-2.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Collecting Mako (from alembic->sqlalchemy-spanner>=1.14.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading mako-1.3.10-py3-none-any.whl.metadata (2.9 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography->authlib<2.0.0,>=1.5.1->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+Collecting MarkupSafe>=0.9.2 (from Mako->alembic->sqlalchemy-spanner>=1.14.0->google-adk>=0.1.0->-r requirements.txt (line 5))
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading google_adk-1.19.0-py3-none-any.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 156.3 MB/s eta 0:00:00
+Downloading google_cloud_aiplatform-1.128.0-py2.py3-none-any.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 171.4 MB/s eta 0:00:00
+Downloading google_cloud_texttospeech-2.33.0-py3-none-any.whl (192 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 192.2/192.2 kB 202.4 MB/s eta 0:00:00
+Downloading google_cloud_storage-3.6.0-py3-none-any.whl (299 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 299.0/299.0 kB 250.0 MB/s eta 0:00:00
+Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 252.9 MB/s eta 0:00:00
+Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 137.6 MB/s eta 0:00:00
+Downloading aiohttp-3.13.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 236.6 MB/s eta 0:00:00
+Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading aiosqlite-0.21.0-py3-none-any.whl (15 kB)
+Downloading anyio-4.11.0-py3-none-any.whl (109 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.1/109.1 kB 207.6 MB/s eta 0:00:00
+Downloading attrs-25.4.0-py3-none-any.whl (67 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.6/67.6 kB 145.1 MB/s eta 0:00:00
+Downloading authlib-1.6.5-py2.py3-none-any.whl (243 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.6/243.6 kB 247.7 MB/s eta 0:00:00
+Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 202.2 MB/s eta 0:00:00
+Downloading charset_normalizer-3.4.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (151 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.6/151.6 kB 230.1 MB/s eta 0:00:00
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 155.3 MB/s eta 0:00:00
+Downloading docstring_parser-0.17.0-py3-none-any.whl (36 kB)
+Downloading fastapi-0.118.3-py3-none-any.whl (97 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.0/98.0 kB 206.2 MB/s eta 0:00:00
+Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (231 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 231.1/231.1 kB 243.6 MB/s eta 0:00:00
+Downloading google_api_core-2.28.1-py3-none-any.whl (173 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 173.7/173.7 kB 234.3 MB/s eta 0:00:00
+Downloading google_api_python_client-2.187.0-py3-none-any.whl (14.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 223.5 MB/s eta 0:00:00
+Downloading google_auth-2.43.0-py2.py3-none-any.whl (223 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 223.1/223.1 kB 250.8 MB/s eta 0:00:00
+Downloading google_cloud_bigquery-3.38.0-py3-none-any.whl (259 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 259.3/259.3 kB 258.9 MB/s eta 0:00:00
+Downloading google_cloud_bigquery_storage-2.34.0-py3-none-any.whl (295 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 295.7/295.7 kB 164.7 MB/s eta 0:00:00
+Downloading google_cloud_bigtable-2.34.0-py3-none-any.whl (537 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 537.0/537.0 kB 175.0 MB/s eta 0:00:00
+Downloading google_cloud_core-2.5.0-py3-none-any.whl (29 kB)
+Downloading google_cloud_discoveryengine-0.13.12-py3-none-any.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 206.7 MB/s eta 0:00:00
+Downloading google_cloud_resource_manager-1.15.0-py3-none-any.whl (397 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 397.2/397.2 kB 257.4 MB/s eta 0:00:00
+Downloading google_cloud_secret_manager-2.25.0-py3-none-any.whl (218 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.5/218.5 kB 278.5 MB/s eta 0:00:00
+Downloading google_cloud_spanner-3.59.0-py3-none-any.whl (502 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 502.6/502.6 kB 228.3 MB/s eta 0:00:00
+Downloading google_cloud_speech-2.34.0-py3-none-any.whl (336 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 336.6/336.6 kB 249.7 MB/s eta 0:00:00
+Downloading google_crc32c-1.7.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (32 kB)
+Downloading google_genai-1.52.0-py3-none-any.whl (261 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.2/261.2 kB 202.8 MB/s eta 0:00:00
+Downloading google_resumable_media-2.8.0-py3-none-any.whl (81 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 205.5 MB/s eta 0:00:00
+Downloading graphviz-0.21-py3-none-any.whl (47 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.3/47.3 kB 187.1 MB/s eta 0:00:00
+Downloading grpcio-1.76.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 221.5 MB/s eta 0:00:00
+Downloading idna-3.11-py3-none-any.whl (71 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 222.4 MB/s eta 0:00:00
+Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.0/90.0 kB 206.5 MB/s eta 0:00:00
+Downloading mcp-1.22.0-py3-none-any.whl (175 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 175.5/175.5 kB 258.4 MB/s eta 0:00:00
+Downloading multidict-6.7.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (246 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 246.7/246.7 kB 244.4 MB/s eta 0:00:00
+Downloading opentelemetry_api-1.37.0-py3-none-any.whl (65 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.7/65.7 kB 209.1 MB/s eta 0:00:00
+Downloading opentelemetry_exporter_gcp_logging-1.11.0a0-py3-none-any.whl (14 kB)
+Downloading opentelemetry_resourcedetector_gcp-1.11.0a0-py3-none-any.whl (18 kB)
+Downloading opentelemetry_exporter_gcp_monitoring-1.11.0a0-py3-none-any.whl (13 kB)
+Downloading opentelemetry_exporter_gcp_trace-1.11.0-py3-none-any.whl (14 kB)
+Downloading opentelemetry_exporter_otlp_proto_http-1.37.0-py3-none-any.whl (19 kB)
+Downloading opentelemetry_exporter_otlp_proto_common-1.37.0-py3-none-any.whl (18 kB)
+Downloading opentelemetry_proto-1.37.0-py3-none-any.whl (72 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 224.3 MB/s eta 0:00:00
+Downloading opentelemetry_sdk-1.37.0-py3-none-any.whl (131 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.9/131.9 kB 249.4 MB/s eta 0:00:00
+Downloading opentelemetry_semantic_conventions-0.58b0-py3-none-any.whl (207 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 208.0/208.0 kB 248.1 MB/s eta 0:00:00
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 33.9 MB/s eta 0:00:00
+Downloading propcache-0.4.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (210 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 210.0/210.0 kB 265.3 MB/s eta 0:00:00
+Downloading proto_plus-1.26.1-py3-none-any.whl (50 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.2/50.2 kB 196.8 MB/s eta 0:00:00
+Downloading protobuf-6.33.1-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.2/323.2 kB 282.0 MB/s eta 0:00:00
+Downloading pyarrow-22.0.0-cp311-cp311-manylinux_2_28_x86_64.whl (47.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.7/47.7 MB 221.4 MB/s eta 0:00:00
+Downloading pydantic-2.12.4-py3-none-any.whl (463 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 463.4/463.4 kB 263.4 MB/s eta 0:00:00
+Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 269.2 MB/s eta 0:00:00
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 244.9 MB/s eta 0:00:00
+Downloading shapely-2.1.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 143.5 MB/s eta 0:00:00
+Downloading sqlalchemy-2.0.44-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 248.6 MB/s eta 0:00:00
+Downloading sqlalchemy_spanner-1.17.1-py3-none-any.whl (31 kB)
+Downloading starlette-0.48.0-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.7/73.7 kB 231.2 MB/s eta 0:00:00
+Downloading tenacity-9.1.2-py3-none-any.whl (28 kB)
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 187.7 MB/s eta 0:00:00
+Downloading tzlocal-5.3.1-py3-none-any.whl (18 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 246.4 MB/s eta 0:00:00
+Downloading uvicorn-0.38.0-py3-none-any.whl (68 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.1/68.1 kB 218.4 MB/s eta 0:00:00
+Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.1/79.1 kB 229.2 MB/s eta 0:00:00
+Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 182.3/182.3 kB 234.7 MB/s eta 0:00:00
+Downloading yarl-1.22.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (365 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 365.8/365.8 kB 264.6 MB/s eta 0:00:00
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading cachetools-6.2.2-py3-none-any.whl (11 kB)
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading google_auth_httplib2-0.2.1-py3-none-any.whl (9.5 kB)
+Downloading google_cloud_logging-3.12.1-py2.py3-none-any.whl (229 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.5/229.5 kB 263.0 MB/s eta 0:00:00
+Downloading google_cloud_monitoring-2.28.0-py3-none-any.whl (384 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 384.7/384.7 kB 262.9 MB/s eta 0:00:00
+Downloading google_cloud_trace-1.17.0-py3-none-any.whl (104 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 104.1/104.1 kB 251.8 MB/s eta 0:00:00
+Downloading googleapis_common_protos-1.72.0-py3-none-any.whl (297 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 297.5/297.5 kB 155.3 MB/s eta 0:00:00
+Downloading greenlet-3.2.4-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (587 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 587.7/587.7 kB 284.8 MB/s eta 0:00:00
+Downloading grpc_google_iam_v1-0.14.3-py3-none-any.whl (32 kB)
+Downloading grpc_interceptor-0.15.4-py3-none-any.whl (20 kB)
+Downloading grpcio_status-1.76.0-py3-none-any.whl (14 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httplib2-0.31.0-py3-none-any.whl (91 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.1/91.1 kB 198.3 MB/s eta 0:00:00
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 217.5 MB/s eta 0:00:00
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 220.7 MB/s eta 0:00:00
+Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 236.1 MB/s eta 0:00:00
+Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.3/181.3 kB 261.1 MB/s eta 0:00:00
+Downloading pydantic_settings-2.12.0-py3-none-any.whl (51 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 51.9/51.9 kB 206.4 MB/s eta 0:00:00
+Downloading PyJWT-2.10.1-py3-none-any.whl (22 kB)
+Downloading cryptography-46.0.3-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 223.8 MB/s eta 0:00:00
+Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading rpds_py-0.29.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (392 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 392.9/392.9 kB 267.3 MB/s eta 0:00:00
+Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading sqlparse-0.5.3-py3-none-any.whl (44 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.4/44.4 kB 208.2 MB/s eta 0:00:00
+Downloading sse_starlette-3.0.3-py3-none-any.whl (11 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Downloading alembic-1.17.2-py3-none-any.whl (248 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 248.6/248.6 kB 241.3 MB/s eta 0:00:00
+Downloading cffi-2.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (215 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 215.6/215.6 kB 272.5 MB/s eta 0:00:00
+Downloading google_cloud_appengine_logging-1.7.0-py3-none-any.whl (16 kB)
+Downloading google_cloud_audit_log-0.4.0-py3-none-any.whl (44 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.9/44.9 kB 191.0 MB/s eta 0:00:00
+Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.1/83.1 kB 240.7 MB/s eta 0:00:00
+Downloading pyparsing-3.2.5-py3-none-any.whl (113 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.9/113.9 kB 200.2 MB/s eta 0:00:00
+Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+Downloading mako-1.3.10-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 217.2 MB/s eta 0:00:00
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.1/118.1 kB 246.7 MB/s eta 0:00:00
+Installing collected packages: zipp, websockets, watchdog, urllib3, uritemplate, tzlocal, typing-extensions, tenacity, sqlparse, sniffio, six, rpds-py, pyyaml, python-multipart, python-dotenv, pyparsing, pyjwt, pycparser, pyasn1, pyarrow, protobuf, propcache, packaging, numpy, multidict, MarkupSafe, idna, httpx-sse, h11, greenlet, graphviz, google-crc32c, frozenlist, docstring_parser, cloudpickle, click, charset_normalizer, certifi, cachetools, attrs, annotated-types, aiohappyeyeballs, yarl, uvicorn, typing-inspection, sqlalchemy, shapely, rsa, requests, referencing, python-dateutil, pydantic-core, pyasn1-modules, proto-plus, opentelemetry-proto, Mako, importlib-metadata, httplib2, httpcore, grpcio, googleapis-common-protos, google-resumable-media, cffi, anyio, aiosqlite, aiosignal, starlette, sse-starlette, pydantic, opentelemetry-exporter-otlp-proto-common, opentelemetry-api, jsonschema-specifications, httpx, grpcio-status, grpc-interceptor, google-cloud-audit-log, google-auth, cryptography, alembic, aiohttp, pydantic-settings, opentelemetry-semantic-conventions, jsonschema, grpc-google-iam-v1, google-genai, google-auth-httplib2, google-api-core, fastapi, authlib, opentelemetry-sdk, mcp, google-cloud-core, google-api-python-client, opentelemetry-resourcedetector-gcp, opentelemetry-exporter-otlp-proto-http, google-cloud-trace, google-cloud-texttospeech, google-cloud-storage, google-cloud-speech, google-cloud-spanner, google-cloud-secret-manager, google-cloud-resource-manager, google-cloud-monitoring, google-cloud-discoveryengine, google-cloud-bigtable, google-cloud-bigquery-storage, google-cloud-bigquery, google-cloud-appengine-logging, sqlalchemy-spanner, opentelemetry-exporter-gcp-trace, opentelemetry-exporter-gcp-monitoring, google-cloud-logging, google-cloud-aiplatform, opentelemetry-exporter-gcp-logging, google-adk
+Successfully installed Mako-1.3.10 MarkupSafe-3.0.3 aiohappyeyeballs-2.6.1 aiohttp-3.13.2 aiosignal-1.4.0 aiosqlite-0.21.0 alembic-1.17.2 annotated-types-0.7.0 anyio-4.11.0 attrs-25.4.0 authlib-1.6.5 cachetools-6.2.2 certifi-2025.11.12 cffi-2.0.0 charset_normalizer-3.4.4 click-8.3.1 cloudpickle-3.1.2 cryptography-46.0.3 docstring_parser-0.17.0 fastapi-0.118.3 frozenlist-1.8.0 google-adk-1.19.0 google-api-core-2.28.1 google-api-python-client-2.187.0 google-auth-2.43.0 google-auth-httplib2-0.2.1 google-cloud-aiplatform-1.128.0 google-cloud-appengine-logging-1.7.0 google-cloud-audit-log-0.4.0 google-cloud-bigquery-3.38.0 google-cloud-bigquery-storage-2.34.0 google-cloud-bigtable-2.34.0 google-cloud-core-2.5.0 google-cloud-discoveryengine-0.13.12 google-cloud-logging-3.12.1 google-cloud-monitoring-2.28.0 google-cloud-resource-manager-1.15.0 google-cloud-secret-manager-2.25.0 google-cloud-spanner-3.59.0 google-cloud-speech-2.34.0 google-cloud-storage-3.6.0 google-cloud-texttospeech-2.33.0 google-cloud-trace-1.17.0 google-crc32c-1.7.1 google-genai-1.52.0 google-resumable-media-2.8.0 googleapis-common-protos-1.72.0 graphviz-0.21 greenlet-3.2.4 grpc-google-iam-v1-0.14.3 grpc-interceptor-0.15.4 grpcio-1.76.0 grpcio-status-1.76.0 h11-0.16.0 httpcore-1.0.9 httplib2-0.31.0 httpx-0.28.1 httpx-sse-0.4.3 idna-3.11 importlib-metadata-8.7.0 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 mcp-1.22.0 multidict-6.7.0 numpy-2.3.5 opentelemetry-api-1.37.0 opentelemetry-exporter-gcp-logging-1.11.0a0 opentelemetry-exporter-gcp-monitoring-1.11.0a0 opentelemetry-exporter-gcp-trace-1.11.0 opentelemetry-exporter-otlp-proto-common-1.37.0 opentelemetry-exporter-otlp-proto-http-1.37.0 opentelemetry-proto-1.37.0 opentelemetry-resourcedetector-gcp-1.11.0a0 opentelemetry-sdk-1.37.0 opentelemetry-semantic-conventions-0.58b0 packaging-25.0 propcache-0.4.1 proto-plus-1.26.1 protobuf-6.33.1 pyarrow-22.0.0 pyasn1-0.6.1 pyasn1-modules-0.4.2 pycparser-2.23 pydantic-2.12.4 pydantic-core-2.41.5 pydantic-settings-2.12.0 pyjwt-2.10.1 pyparsing-3.2.5 python-dateutil-2.9.0.post0 python-dotenv-1.2.1 python-multipart-0.0.20 pyyaml-6.0.3 referencing-0.37.0 requests-2.32.5 rpds-py-0.29.0 rsa-4.9.1 shapely-2.1.2 six-1.17.0 sniffio-1.3.1 sqlalchemy-2.0.44 sqlalchemy-spanner-1.17.1 sqlparse-0.5.3 sse-starlette-3.0.3 starlette-0.48.0 tenacity-9.1.2 typing-extensions-4.15.0 typing-inspection-0.4.2 tzlocal-5.3.1 uritemplate-4.2.0 urllib3-2.5.0 uvicorn-0.38.0 watchdog-6.0.0 websockets-15.0.1 yarl-1.22.0 zipp-3.23.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 24.0 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+[0mRemoving intermediate container 2ead330b7cfb
+ ---> cb3983513f8d
+Step 6/12 : COPY purrpurragent/ ./purrpurragent/
+ ---> 5d365ed16c9d
+Step 7/12 : EXPOSE 8080
+ ---> Running in 7ca5729adfdc
+Removing intermediate container 7ca5729adfdc
+ ---> 7950326f7b8b
+Step 8/12 : ENV PORT=8080
+ ---> Running in 8101f864128a
+Removing intermediate container 8101f864128a
+ ---> 63fb211d51a4
+Step 9/12 : ENV ADK_HOST=0.0.0.0
+ ---> Running in bc7ae9041019
+Removing intermediate container bc7ae9041019
+ ---> 57dde0ceb406
+Step 10/12 : ENV ADK_PORT=8080
+ ---> Running in 31740913e219
+Removing intermediate container 31740913e219
+ ---> f91e0191e0ba
+Step 11/12 : HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3   CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')" || exit 1
+ ---> Running in edbd9f7582e2
+Removing intermediate container edbd9f7582e2
+ ---> b0c1586e211d
+Step 12/12 : CMD python -m adk web purrpurragent/ --host 0.0.0.0 --port ${PORT:-8080}
+ ---> Running in b1a70e09d19d
+Removing intermediate container b1a70e09d19d
+ ---> 8345fc487bf4
+Successfully built 8345fc487bf4
+Successfully tagged gcr.io/able-armor-381700/purrpur-adk:latest
+PUSH
+Pushing gcr.io/able-armor-381700/purrpur-adk
+The push refers to repository [gcr.io/able-armor-381700/purrpur-adk]
+81f72f1083a1: Preparing
+abb7e7421720: Preparing
+e19b9aabd983: Preparing
+5f6b082faf5e: Preparing
+64e11782c7d0: Preparing
+720ee7aae3ad: Preparing
+655ff69eb9c8: Preparing
+5c988eaa8862: Preparing
+70a290c5e58b: Preparing
+5c988eaa8862: Layer already exists
+720ee7aae3ad: Layer already exists
+655ff69eb9c8: Layer already exists
+70a290c5e58b: Layer already exists
+64e11782c7d0: Pushed
+e19b9aabd983: Pushed
+5f6b082faf5e: Pushed
+abb7e7421720: Pushed
+81f72f1083a1: Pushed
+latest: digest: sha256:b5ed980afd2b501504d7b6fc92b9623efb10003600161ee4da0c5384ff670dbc size: 2211
+DONE
+--------------------------------------------------------------------------------
+ID                                    CREATE_TIME                DURATION  SOURCE                                                                                           IMAGES                                          STATUS
+680cbd31-cd70-4e3b-b729-357044c2d7f1  2025-11-23T05:11:26+00:00  5M43S     gs://able-armor-381700_cloudbuild/source/1763872846.344336-d1dccc7d06684b0a9095754d1dd259c2.tgz  gcr.io/able-armor-381700/purrpur-adk (+1 more)  SUCCESS
+
+🚀 Desplegando en Cloud Run (esto puede tomar 2-3 minutos)...
+Deploying container to Cloud Run service [purrpur-adk] in project [able-armor-381700] region [us-central1]
+Deploying...
+Setting IAM Policy.....................done
+Creating Revision....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................failed
+Deployment failed
+ERROR: (gcloud.run.deploy) The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable within the allocated timeout. This can happen when the container port is misconfigured or if the timeout is too short. The health check timeout can be extended. Logs for this revision might contain more information.
+
+Logs URL: https://console.cloud.google.com/logs/viewer?project=able-armor-381700&resource=cloud_run_revision/service_name/purrpur-adk/revision_name/purrpur-adk-00002-2q9&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22purrpur-adk%22%0Aresource.labels.revision_name%3D%22purrpur-adk-00002-2q9%22 
+For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start
