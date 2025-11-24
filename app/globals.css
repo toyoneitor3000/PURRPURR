@@ -8,22 +8,46 @@ html {
 
 body {
   @apply bg-gray-950 text-white;
+  /* Fondo sutil para resaltar el glassmorfismo */
+  background-image: radial-gradient(circle at 50% 0%, #2a2a2a 0%, #1a1a1a 70%);
 }
 
-/* Custom scrollbar for a sleek look */
+/* --- Glassmorphism Utilities --- */
+
+/* Satin Glass: Suave, brillante, premium */
+.glass-satin {
+  @apply backdrop-blur-satin bg-white/5 border border-white/10 shadow-lg;
+  /* Brillo especular sutil */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Matte Glass: Opaco, difuso, misterioso */
+.glass-matte {
+  @apply backdrop-blur-matte bg-white/2 border border-white/5;
+}
+
+/* Botón Amarillo Traslúcido (Yellow Glass) */
+.btn-yellow-glass {
+  @apply backdrop-blur-md bg-accent-500/15 text-accent-500 border border-accent-500/30 rounded-xl px-6 py-3 transition-all duration-300 ease-out;
+  box-shadow: 0 4px 20px rgba(255, 204, 0, 0.1);
+}
+
+.btn-yellow-glass:hover {
+  @apply bg-accent-500/25 shadow-[0_0_30px_rgba(255,204,0,0.3)] scale-[1.02];
+  border-color: rgba(255, 204, 0, 0.5);
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #4a4a4a;
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #6a6a6a;
 }

@@ -1,1 +1,8 @@
-node_modules
+.venv
+.next
+.env
+node_modules/
+**/node_modules/
+.DS_Store
+dist/
+build/
