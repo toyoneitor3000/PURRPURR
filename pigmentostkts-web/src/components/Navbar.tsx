@@ -42,7 +42,7 @@ export default function Navbar() {
               src="/brand/logo.png" 
               alt="PIGMENTO Logo"
               fill
-              className="object-contain object-left brightness-0 invert"
+              className="object-contain object-left"
               sizes="(max-width: 768px) 160px, 208px"
               priority
             />
