@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link href="/" className="relative block w-40 h-16 md:w-52 md:h-20 transition-transform hover:scale-105">
              {/* Use brightness-0 invert to make logo white in dark mode */}
             <Image 
-              src="/brand/logo.svg" 
+              src="/brand/logo.png" 
               alt="PIGMENTO Logo"
               fill
               className="object-contain object-left brightness-0 invert"
