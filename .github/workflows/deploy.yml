@@ -1,0 +1,39 @@
+# CI/CD Pipeline para Desplegar el Frontend a Vercel
+
+name: Deploy Frontend to Vercel
+
+on:
+  push:
+    branches:
+      - main # Se activa en cada push a la rama principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: 'npm'
+
+      - name: 3. Install Dependencies
+        run: npm install
+
+      - name: 4. Build Project
+        run: npm run build
+        env:
+          # Si se necesitan variables de entorno en el build, se añaden aquí
+          # EXAMPLE_VAR: ${{ secrets.EXAMPLE_VAR }}
+
+      - name: 5. Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Obligatorio
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}   # Obligatorio
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Obligatorio
+          vercel-args: '--prod' # Despliega a producción
