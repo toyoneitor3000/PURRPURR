@@ -3,10 +3,10 @@
 
 # Google ADK and Cloud services
 google-adk>=0.1.0
-google-cloud-aiplatform>=1.38.0
-google-cloud-texttospeech>=2.14.0
-google-cloud-storage>=2.10.0
-google-generativeai>=0.4.0
+# google-cloud-aiplatform>=1.38.0
+# google-cloud-texttospeech>=2.14.0
+# google-cloud-storage>=2.10.0
+# google-generativeai>=0.4.0
 
 # Utilities
 pyyaml>=6.0

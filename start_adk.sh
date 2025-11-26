@@ -41,5 +41,5 @@ echo "📁 Agent directory: ./purrpurragent/"
 echo "📄 Looking for: ./purrpurragent/root_agent.yaml"
 echo "🌐 Access at: http://127.0.0.1:8000"
 echo ""
-cd purrpurragent/
+cd PURRPURRAGENT/
 adk web .
