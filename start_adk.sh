@@ -42,4 +42,5 @@ echo "📄 Looking for: ./purrpurragent/root_agent.yaml"
 echo "🌐 Access at: http://127.0.0.1:8000"
 echo ""
 cd PURRPURRAGENT/
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 adk web .

@@ -42,36 +42,38 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({ beforeImage, afterI
 
   return (
     <div className="w-full max-w-4xl mx-auto my-12 select-none">
-      {label && <h3 className="text-2xl text-center mb-6 text-victory-gold font-serif tracking-wide">{label}</h3>}
+      {label && <h3 className="text-2xl text-center mb-6 text-brand-cyan font-orbitron tracking-wide text-glow">{label}</h3>}
       <div 
         ref={containerRef}
-        className="relative w-full aspect-video rounded-xl overflow-hidden cursor-ew-resize border-2 border-victory-charcoal shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+        className="relative w-full aspect-video rounded-xl overflow-hidden cursor-ew-resize border-2 border-brand-mid-blue shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
       >
         {/* After Image (Background) */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-brand-dark-blue">
+           <div className="absolute inset-0 flex items-center justify-center text-brand-slate opacity-20 font-orbitron text-4xl">DESPUÉS</div>
           <Image src={afterImage} alt="After" fill className="object-cover" />
-          <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-victory-gold px-3 py-1 rounded text-xs font-bold tracking-widest border border-victory-gold/20">DESPUÉS</div>
+          <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-brand-cyan px-3 py-1 rounded text-xs font-bold tracking-widest border border-brand-cyan/20 font-orbitron">DESPUÉS</div>
         </div>
 
         {/* Before Image (Clipped) */}
         <div 
-          className="absolute inset-0 overflow-hidden" 
+          className="absolute inset-0 overflow-hidden bg-brand-charcoal" 
           style={{ width: `${sliderPosition}%`, borderRight: '2px solid white' }}
         >
+           <div className="absolute inset-0 flex items-center justify-center text-brand-slate opacity-20 font-orbitron text-4xl">ANTES</div>
           <Image src={beforeImage} alt="Before" fill className="object-cover" />
-          <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded text-xs font-bold tracking-widest">ANTES</div>
+          <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded text-xs font-bold tracking-widest font-orbitron">ANTES</div>
         </div>
 
         {/* Slider Handle */}
         <div 
-          className="absolute top-0 bottom-0 w-1 bg-victory-gold shadow-[0_0_20px_rgba(212,175,55,0.8)] z-20 flex items-center justify-center"
+          className="absolute top-0 bottom-0 w-1 bg-brand-cyan shadow-[0_0_20px_#06b6d4] z-20 flex items-center justify-center"
           style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
         >
-          <div className="bg-victory-gold p-2 rounded-full text-black shadow-lg hover:scale-110 transition-transform">
+          <div className="bg-brand-cyan p-2 rounded-full text-brand-dark-blue shadow-lg hover:scale-110 transition-transform">
             <MoveHorizontal size={24} />
           </div>
         </div>
