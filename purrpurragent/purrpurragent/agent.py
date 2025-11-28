@@ -16,9 +16,13 @@ try:
     _OriginalGenerativeModel = genai.GenerativeModel
     
     def _PatchedGenerativeModel(*args, **kwargs):
-        # Create timeout config
+        # Create config with timeout and increased token limit
         timeout_config = types.GenerateContentConfig(
-            http_options=types.HttpOptions(timeout=600)
+            http_options=types.HttpOptions(timeout=600),
+            max_output_tokens=8192,
+            temperature=0.2,
+            top_p=0.8,
+            top_k=40
         )
         
         if 'generation_config' in kwargs:
