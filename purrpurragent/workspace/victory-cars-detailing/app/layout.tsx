@@ -57,7 +57,7 @@ export default function RootLayout({
                 </Link>
               ))}
             </nav>
-            <a href="https://wa.me/573142561889" target="_blank" rel="noopener noreferrer" className="hidden md:flex bg-brand-cyan text-brand-dark-blue font-bold py-2 px-6 rounded-full hover:bg-white transition-all duration-300 items-center gap-2 text-sm shadow-[0_0_15px_rgba(6,182,212,0.4)] font-orbitron tracking-wide">
+            <a href="https://wa.me/573157742419" target="_blank" rel="noopener noreferrer" className="hidden md:flex bg-brand-cyan text-brand-dark-blue font-bold py-2 px-6 rounded-full hover:bg-white transition-all duration-300 items-center gap-2 text-sm shadow-[0_0_15px_rgba(6,182,212,0.4)] font-orbitron tracking-wide">
               Contacto <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -65,7 +65,7 @@ export default function RootLayout({
 
         {children}
 
-        <a href="https://wa.me/573142561889" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 hover:bg-[#128C7E] transition-all duration-300 animate-pulse">
+        <a href="https://wa.me/573157742419" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 hover:bg-[#128C7E] transition-all duration-300 animate-pulse">
           <WhatsAppIcon className="h-8 w-8" />
         </a>
       </body>

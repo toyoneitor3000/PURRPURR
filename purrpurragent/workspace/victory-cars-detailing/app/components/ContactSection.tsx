@@ -32,7 +32,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold font-orbitron tracking-wider text-sm">LÍNEA DIRECTA</h4>
-                  <p className="text-brand-slate">+57 314 256 1889</p>
+                  <p className="text-brand-slate">+57 315 7742419</p>
                 </div>
               </div>
               <div className="flex items-start group">
