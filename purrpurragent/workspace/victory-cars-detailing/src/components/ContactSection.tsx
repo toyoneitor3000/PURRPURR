@@ -63,7 +63,7 @@ const ContactSection: React.FC = () => {
           <div className="lg:w-2/3 bg-brand-dark-blue p-8 md:p-12 rounded-2xl border border-white/5 shadow-2xl relative">
             <div className="absolute top-4 right-4 md:top-8 md:right-8 w-24 h-24 md:w-32 md:h-32 opacity-10">
               <div className="relative w-full h-full">
-                <Image src="/logo.png" alt="Logo Watermark" fill className="object-contain" />
+                <Image src="/logo.png" alt="Logo Watermark" fill sizes="(max-width: 800px) 100vw, 800px" style={{ objectFit: 'contain' }} />
               </div>
             </div>
             <form className="space-y-6 relative z-10">

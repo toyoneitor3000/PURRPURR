@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import ComparisonSlider from './InteractiveComparisonSlider';
+import ComparisonSlider from '../../src/components/InteractiveComparisonSlider';
 
 const BeforeAfterGallery: React.FC = () => {
   return (

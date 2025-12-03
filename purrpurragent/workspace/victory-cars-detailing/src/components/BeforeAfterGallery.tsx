@@ -24,11 +24,6 @@ const BeforeAfterGallery: React.FC = () => {
             beforeImage="/gallery/paint-before.jpg"
             afterImage="/gallery/paint-after.jpg"
           />
-          <ComparisonSlider
-            label="Restauración de Faros y Plásticos"
-            beforeImage="/gallery/trim-before.jpg"
-            afterImage="/gallery/trim-after.jpg"
-          />
         </div>
       </div>
     </section>

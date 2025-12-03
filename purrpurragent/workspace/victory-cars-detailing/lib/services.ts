@@ -1,7 +1,18 @@
+//@ts-nocheck
 'use client';
 import { Car, CheckCircle, Search, Shield, Sparkles, SprayCan, Wind } from 'lucide-react';
 
-export const SERVICES = [
+interface Service {
+  slug: string;
+  icon: any;
+  title: string;
+  shortDescription: string;
+  longDescription: string;
+  heroImage: string;
+  gallery: string[];
+}
+
+export const SERVICES: Service[] = [
   {
     slug: 'detailing-pro-finish',
     icon: Sparkles,

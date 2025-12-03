@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const HeroSection = () => {
@@ -6,9 +5,9 @@ const HeroSection = () => {
     <section className="relative bg-gray-900 text-white h-screen flex items-center justify-center">
       <div className="absolute inset-0">
         <img
-          src="/images/hero-bg.jpg" // Placeholder for a background image
+          src="/hero-bg.jpg"
           alt="Victory Cars Detailing"
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover"
         />
       </div>
       <div className="relative z-10 text-center px-4">
