@@ -1,10 +1,11 @@
 import React from 'react';
-import type { Service } from '../../lib/services';
-import { SERVICES } from '../../lib/services';
+import type { Service } from '../../../lib/services';
+import { SERVICES } from '../../../lib/services';
 
-interface ServicesSectionProps {}
+/* eslint-disable @typescript-eslint/no-empty-interface */
+type ServicesSectionProps = {};
 
-const ServicesSection: React.FC<ServicesSectionProps> = () => {
+const ServicesSection: React.FC = () => {
   return (
     <section>
       <h2>Our Services</h2>

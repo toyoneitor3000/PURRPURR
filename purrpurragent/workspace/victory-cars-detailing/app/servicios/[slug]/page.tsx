@@ -1,4 +1,4 @@
-import { notFound, redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 // Eliminamos generateStaticParams para evitar errores de build con datos faltantes.
 

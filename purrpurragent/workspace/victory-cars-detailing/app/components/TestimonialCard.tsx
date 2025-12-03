@@ -21,6 +21,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, rating
           />
         ))}
       </div>
+      {/* eslint-disable-next-line react/no-unescaped-entities */}
       <p className="text-brand-slate text-lg italic mb-6 leading-relaxed font-light">"{quote}"</p>
       <div className="flex items-center">
           <div className="w-10 h-10 bg-brand-dark-blue border border-white/10 rounded-full mr-3 flex items-center justify-center text-brand-cyan font-bold font-orbitron">

@@ -1,1 +1,1 @@
-omo eexport { default } from '../../src/components/InteractiveComparisonSlider';
+export { default } from '../../src/components/InteractiveComparisonSlider';

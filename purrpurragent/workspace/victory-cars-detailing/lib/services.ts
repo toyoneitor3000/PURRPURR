@@ -1,10 +1,11 @@
-//@ts-nocheck
+ 
 'use client';
-import { Car, CheckCircle, Search, Shield, Sparkles, SprayCan, Wind } from 'lucide-react';
+import React from 'react';
+import { Car, Search, Shield, Sparkles, SprayCan, Wind } from 'lucide-react';
 
-interface Service {
+export interface Service {
   slug: string;
-  icon: any;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
   shortDescription: string;
   longDescription: string;
