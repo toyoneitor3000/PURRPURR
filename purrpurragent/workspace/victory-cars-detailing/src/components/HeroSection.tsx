@@ -1,5 +1,5 @@
 import React from 'react';
-import BackgroundCarousel from './BackgroundCarousel';
+import Carousel from './Carousel';
 
 const HeroSection: React.FC = () => {
   const heroImages = [
@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => {
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark-blue">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
-        <BackgroundCarousel images={heroImages} interval={4000} />
+        <Carousel images={heroImages} interval={4000} />
       </div>
 
       {/* Overlays */}

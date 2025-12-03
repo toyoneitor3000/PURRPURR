@@ -5,17 +5,19 @@ import { useState, useEffect } from 'react';
 
 interface CarouselProps {
   images: string[];
+  interval?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const Carousel: React.FC<CarouselProps> = ({ images, interval }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const intervalMs = interval ?? 5000; // Use provided interval or default to 5 seconds
+    const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
-    return () => clearInterval(interval);
-  }, [images.length]);
+    }, intervalMs);
+    return () => clearInterval(timer);
+  }, [images.length, interval]);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
