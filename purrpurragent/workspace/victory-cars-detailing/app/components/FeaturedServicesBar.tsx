@@ -1,28 +1,38 @@
 import React from 'react';
-import { Car, Paintbrush, Shield, WashingMachine, Sparkles, Sun } from 'lucide-react';
+import { FaCar, FaSprayCan, FaShieldAlt, FaStar } from 'react-icons/fa';
 
-interface ServiceIconProps {
-  icon: React.ElementType;
-  label: string;
-}
+const FeaturedServicesBar = () => {
+  const services = [
+    { icon: <FaCar className="text-2xl" />, title: 'Detailing Completo', description: 'Limpieza profunda interior y exterior' },
+    { icon: <FaSprayCan className="text-2xl" />, title: 'Pulido & Encerado', description: 'Brillo profesional duradero' },
+    { icon: <FaShieldAlt className="text-2xl" />, title: 'Protección Cerámica', description: 'Máxima protección para tu auto' },
+    { icon: <FaStar className="text-2xl" />, title: 'Restauración', description: 'Devolvemos el brillo original' },
+  ];
 
-const ServiceIcon: React.FC<ServiceIconProps> = ({ icon: Icon, label }) => (
-  <div className="flex flex-col items-center p-6 hover:bg-brand-mid-blue rounded-xl cursor-pointer transition duration-300 border border-transparent hover:border-brand-cyan/30 group">
-    <Icon size={32} className="text-brand-slate group-hover:text-brand-cyan mb-3 transition-colors duration-300" />
-    <span className="text-center text-xs font-medium text-brand-slate group-hover:text-white uppercase tracking-widest font-orbitron">{label}</span>
-  </div>
-);
-
-const FeaturedServicesBar: React.FC = () => {
   return (
-    <section className="bg-brand-mid-blue/50 border-y border-white/5 py-4 backdrop-blur-sm">
-      <div className="container mx-auto px-4 flex flex-wrap justify-around items-center gap-y-4">
-        <ServiceIcon icon={WashingMachine} label="Aqua Wash" />
-        <ServiceIcon icon={Sparkles} label="Detailing" />
-        <ServiceIcon icon={Shield} label="Cerámico 9H" />
-        <ServiceIcon icon={Car} label="PPF Shield" />
-        <ServiceIcon icon={Paintbrush} label="Pintura" />
-        <ServiceIcon icon={Sun} label="Polarizado" />
+    <section className="py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          Nuestros Servicios Destacados
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-lg rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/20 hover:scale-105"
+            >
+              <div className="text-blue-400 mb-4 flex justify-center">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-white text-center">
+                {service.title}
+              </h3>
+              <p className="text-gray-300 text-center text-sm">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,13 +1,15 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 interface ComparisonSliderProps {
   beforeImage: string;
   afterImage: string;
   label?: string;
+  theme?: string;
 }
 
 /**
@@ -20,9 +22,12 @@ export const ComparisonSlider = ({
   beforeImage,
   afterImage,
   label,
+  theme,
 }: ComparisonSliderProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const themeRef = useRef<string>(null);
   const [position, setPosition] = useState(50); // 0‑100 %
+  const [themeLoaded, setThemeLoaded] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
   // Update position based on mouse / touch coordinates
@@ -31,43 +36,68 @@ export const ComparisonSlider = ({
     const { left, width } = containerRef.current.getBoundingClientRect();
     const percent = ((clientX - left) / width) * 100;
     setPosition(Math.min(Math.max(percent, 0), 100));
+    if (themeLoaded) {
+      setThemeLoaded(false);
+      setTheme(theme);
+    }
   };
 
-  const handleMouseDown = () => setIsDragging(true);
-  const handleMouseUp = () => setIsDragging(false);
-  // Mouse and touch end events are now attached to the container
-  const handleTouchStart = () => setIsDragging(true);
-  const handleTouchEnd = () => setIsDragging(false);
-  // Touch end is handled via onTouchEnd on the container
+  const handleMouseDown = () => {
+    setIsDragging(true);
+    setThemeLoaded(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    setThemeLoaded(false);
+  };
+
+  const handleTouchStart = () => {
+    setIsDragging(true);
+    setThemeLoaded(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    setThemeLoaded(false);
+  };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
     updatePosition(e.clientX);
+    if (themeLoaded) {
+      setThemeLoaded(false);
+      setTheme(theme);
+    }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isDragging) return;
     const touch = e.touches[0];
     updatePosition(touch.clientX);
+    if (themeLoaded) {
+      setThemeLoaded(false);
+      setTheme(theme);
+    }
   };
 
-
-  // End dragging is handled directly on the container element
-  // The onMouseUp and onTouchEnd handlers on the container will reset isDragging
-
-  // Attach listeners for dragging movement when dragging is active
-  // Dragging is handled by the container's onMouseMove/onTouchMove; no extra listeners needed
-
-  // Keyboard accessibility – range input (visually hidden)
   const handleRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPosition(Number(e.target.value));
+    if (themeLoaded) {
+      setThemeLoaded(false);
+      setTheme(theme);
+    }
   };
 
-  // Prevent image dragging
   useEffect(() => {
     const imgs = containerRef.current?.querySelectorAll('img');
     imgs?.forEach((img) => (img.draggable = false));
+    if (themeLoaded) {
+      setThemeLoaded(false);
+      setTheme(theme);
+    }
   }, []);
+
   return (
     <div className="w-full max-w-4xl mx-auto my-12 select-none">
       {label && (
@@ -76,7 +106,16 @@ export const ComparisonSlider = ({
         </h3>
       )}
 
-        <div className="relative aspect-video rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group" ref={containerRef} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onMouseMove={handleMouseMove} onTouchMove={handleTouchMove} onMouseUp={handleMouseUp} onTouchEnd={handleTouchEnd}>
+      <div
+        className="relative w-full h-[800px] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
+        ref={containerRef}
+        onMouseDown={handleMouseDown}
+        onTouchStart={handleTouchStart}
+        onMouseMove={handleMouseMove}
+        onTouchMove={handleTouchMove}
+        onMouseUp={handleMouseUp}
+        onTouchEnd={handleTouchEnd}
+      >
         {/* After image – full background */}
         <div className="absolute inset-0">
           <Image src={afterImage} alt="After" fill className="object-cover" />
@@ -101,12 +140,12 @@ export const ComparisonSlider = ({
         </div>
 
         {/* Slider handle */}
-<div
-  className="absolute top-0 bottom-0 w-2 bg-gradient-to-b from-brand-cyan via-brand-mid-blue to-brand-cyan z-20 flex items-center justify-center cursor-ew-resize"
-  style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
-  onMouseDown={handleMouseDown}
-  onTouchStart={handleTouchStart}
->
+        <div
+          className="absolute top-0 bottom-0 w-2 bg-gradient-to-b from-brand-cyan via-brand-mid-blue to-brand-cyan z-20 flex items-center justify-center cursor-ew-resize"
+          style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
+        >
           <div className="bg-gradient-to-br from-brand-cyan to-brand-mid-blue p-3 rounded-full text-brand-dark-blue shadow-2xl hover:scale-110 transition-all duration-200 cursor-grab active:cursor-grabbing">
             <div className="flex items-center space-x-1">
               <ChevronLeft size={16} className="text-white" />

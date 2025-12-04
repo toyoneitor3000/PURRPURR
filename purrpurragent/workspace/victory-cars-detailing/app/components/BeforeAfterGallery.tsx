@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import ComparisonSlider from '../../src/components/InteractiveComparisonSlider';
+import ComparisonSlider from './InteractiveComparisonSlider';
 
 const BeforeAfterGallery: React.FC = () => {
   return (
@@ -26,13 +26,13 @@ const BeforeAfterGallery: React.FC = () => {
           />
           <ComparisonSlider 
             label="Restauración de Faros y Plásticos"
-            beforeImage="/gallery/trim-before.jpg" 
-            afterImage="/gallery/trim-after.jpg" 
+            beforeImage="/gallery/paint-before.jpg" 
+            afterImage="/gallery/paint-after.jpg" 
           />
            <ComparisonSlider 
             label="Detailing Interior Profundo"
-            beforeImage="/gallery/interior-before.jpg" 
-            afterImage="/gallery/interior-after.jpg" 
+            beforeImage="/gallery/paint-before.jpg" 
+            afterImage="/gallery/paint-after.jpg" 
           />
         </div>
       </div>

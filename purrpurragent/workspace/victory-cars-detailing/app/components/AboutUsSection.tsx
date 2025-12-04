@@ -8,19 +8,19 @@ const AboutUsSection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
           <div className="md:w-1/2 relative">
-             <div className="absolute -inset-4 bg-brand-cyan/20 rounded-xl blur-2xl -z-10"></div>
+            <div className="absolute -inset-4 bg-brand-cyan/20 rounded-xl blur-2xl -z-10"></div>
             <div className="relative h-[400px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                {/* Placeholder image since we know images are missing, adding a colored div as fallback */}
-                <div className="absolute inset-0 bg-brand-mid-blue flex items-center justify-center text-brand-slate">
-                    [Imagen Taller / Equipo]
-                </div>
-                <Image
-                  src="/about-us.jpg"
-                  alt="Victory Cars S.A.S. Taller"
-                  layout="fill"
-                  objectFit="cover"
-                  className="opacity-80"
-                />
+              {/* Placeholder image since we know images are missing, adding a colored div as fallback */}
+              <div className="absolute inset-0 bg-brand-mid-blue flex items-center justify-center text-brand-slate">
+                [Imagen Taller / Equipo]
+              </div>
+              <Image
+                src="/about-us.jpg"
+                alt="Victory Cars S.A.S. Taller"
+                fill
+                style={{ objectFit: "cover" }}
+                className="opacity-80"
+              />
             </div>
           </div>
           <div className="md:w-1/2 text-brand-slate">
@@ -31,9 +31,9 @@ const AboutUsSection: React.FC = () => {
             <p className="text-lg leading-relaxed mb-8 font-light">
               Combinamos tecnología de vanguardia, técnicas de corrección milimétrica y productos premium como <span className="text-brand-cyan font-bold">IGL Coatings</span> para garantizar que su inversión mantenga su valor y estética por años.
             </p>
-            <button className="text-brand-cyan border-b border-brand-cyan pb-1 hover:text-white hover:border-white transition-all duration-300 text-sm tracking-widest uppercase font-bold font-orbitron">
-              Nuestra Historia
-            </button>
+            <a href="https://wa.me/573124730909?text=Hola,%20deseo%20conocer%20más%20sobre%20Victory%20Cars." target="_blank" rel="noopener noreferrer" className="text-brand-cyan border-b border-brand-cyan pb-1 hover:text-white hover:border-white transition-all duration-300 text-sm tracking-widest uppercase font-bold font-orbitron">
+              Contáctanos
+            </a>
           </div>
         </div>
       </div>

@@ -15,6 +15,13 @@ const nextConfig = {
   },
   webpack: (config) => {
     config.resolve.alias['public'] = path.resolve(__dirname, 'public/');
+
+    // Exclude _src_unused directory from compilation
+    config.module.rules.push({
+      test: /\.(tsx?|jsx?)$/,
+      exclude: [/node_modules/, /_src_unused/],
+    });
+
     return config;
   },
 };
