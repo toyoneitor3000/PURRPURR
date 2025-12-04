@@ -31,11 +31,11 @@ const ServicesSection: React.FC = () => {
               <div className="flex justify-between items-end border-t border-white/10 pt-4 mt-4">
                 <div>
                   <span className="text-xs text-brand-slate block">Automóvil</span>
-                  <span className="text-xl font-bold text-brand-cyan">$1'090.000</span>
+                  <span className="text-xl font-bold text-brand-cyan">$1&#39;090.000</span>
                 </div>
                 <div className="text-right">
                   <span className="text-xs text-brand-slate block">SUV</span>
-                  <span className="text-xl font-bold text-brand-cyan">$1'290.000</span>
+                  <span className="text-xl font-bold text-brand-cyan">$1&#39;290.000</span>
                 </div>
               </div>
             }
@@ -57,11 +57,11 @@ const ServicesSection: React.FC = () => {
               <div className="flex justify-between items-end border-t border-white/10 pt-4 mt-4">
                 <div>
                   <span className="text-xs text-brand-slate block">Automóvil</span>
-                  <span className="text-xl font-bold text-brand-cyan">$1'390.000</span>
+                  <span className="text-xl font-bold text-brand-cyan">$1&#39;390.000</span>
                 </div>
                 <div className="text-right">
                   <span className="text-xs text-brand-slate block">SUV</span>
-                  <span className="text-xl font-bold text-brand-cyan">$1'590.000</span>
+                  <span className="text-xl font-bold text-brand-cyan">$1&#39;590.000</span>
                 </div>
               </div>
             }
@@ -83,11 +83,11 @@ const ServicesSection: React.FC = () => {
               <div className="flex justify-between items-end border-t border-white/10 pt-4 mt-4">
                 <div>
                   <span className="text-xs text-brand-slate block">Automóvil</span>
-                  <span className="text-xl font-bold text-brand-cyan">$1'690.000</span>
+                  <span className="text-xl font-bold text-brand-cyan">$1&#39;690.000</span>
                 </div>
                 <div className="text-right">
                   <span className="text-xs text-brand-slate block">SUV</span>
-                  <span className="text-xl font-bold text-brand-cyan">$1'890.000</span>
+                  <span className="text-xl font-bold text-brand-cyan">$1&#39;890.000</span>
                 </div>
               </div>
             }

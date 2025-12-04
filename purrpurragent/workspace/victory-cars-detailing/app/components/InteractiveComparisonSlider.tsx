@@ -1,15 +1,13 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useContext } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useTheme } from 'next-themes';
 
 interface ComparisonSliderProps {
   beforeImage: string;
   afterImage: string;
   label?: string;
-  theme?: string;
 }
 
 /**
@@ -22,12 +20,9 @@ export const ComparisonSlider = ({
   beforeImage,
   afterImage,
   label,
-  theme,
 }: ComparisonSliderProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const themeRef = useRef<string>(null);
   const [position, setPosition] = useState(50); // 0‑100 %
-  const [themeLoaded, setThemeLoaded] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
   // Update position based on mouse / touch coordinates
@@ -36,66 +31,42 @@ export const ComparisonSlider = ({
     const { left, width } = containerRef.current.getBoundingClientRect();
     const percent = ((clientX - left) / width) * 100;
     setPosition(Math.min(Math.max(percent, 0), 100));
-    if (themeLoaded) {
-      setThemeLoaded(false);
-      setTheme(theme);
-    }
   };
 
   const handleMouseDown = () => {
     setIsDragging(true);
-    setThemeLoaded(true);
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setThemeLoaded(false);
   };
 
   const handleTouchStart = () => {
     setIsDragging(true);
-    setThemeLoaded(true);
   };
 
   const handleTouchEnd = () => {
     setIsDragging(false);
-    setThemeLoaded(false);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
     updatePosition(e.clientX);
-    if (themeLoaded) {
-      setThemeLoaded(false);
-      setTheme(theme);
-    }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isDragging) return;
     const touch = e.touches[0];
     updatePosition(touch.clientX);
-    if (themeLoaded) {
-      setThemeLoaded(false);
-      setTheme(theme);
-    }
   };
 
   const handleRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPosition(Number(e.target.value));
-    if (themeLoaded) {
-      setThemeLoaded(false);
-      setTheme(theme);
-    }
   };
 
   useEffect(() => {
     const imgs = containerRef.current?.querySelectorAll('img');
     imgs?.forEach((img) => (img.draggable = false));
-    if (themeLoaded) {
-      setThemeLoaded(false);
-      setTheme(theme);
-    }
   }, []);
 
   return (
