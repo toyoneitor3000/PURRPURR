@@ -114,10 +114,10 @@ const ContactSection: React.FC = () => {
                         url: window.location.href,
                       });
                     } else {
-                      // Fallback: abrir enlace de WhatsApp con texto predefinido
+                      // Fallback: abrir WhatsApp para compartir
                       const shareUrl = window.location.href;
                       const text = 'Descubre los mejores servicios de detailing para tu vehículo en Victory Cars';
-                      window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + shareUrl)}`, '_blank');
+                      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + shareUrl)}`, '_blank');
                     }
                   }}
                   className="bg-brand-mid-blue border border-white/10 text-white hover:bg-white/10 hover:border-brand-cyan/50 transition-all duration-300 rounded-lg py-3 px-4 flex items-center justify-center gap-2 group font-orbitron tracking-wide"
