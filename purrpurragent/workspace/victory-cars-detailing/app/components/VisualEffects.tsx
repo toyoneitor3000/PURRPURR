@@ -4,6 +4,18 @@ import { useEffect } from 'react';
 
 const VisualEffects = () => {
   useEffect(() => {
+    // Detectar si es dispositivo móvil o tablet
+    const checkMobile = () => {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+             window.innerWidth <= 768 ||
+             ('ontouchstart' in window);
+    };
+    
+    // No aplicar efectos en móvil/tablet
+    if (checkMobile()) {
+      return;
+    }
+
     // Efecto de cursor con partículas
     const handleMouseMove = (e: MouseEvent) => {
       const cursor = document.querySelector('.cursor-effect') as HTMLElement;

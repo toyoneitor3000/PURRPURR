@@ -61,12 +61,12 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Cerrar menú móvil al hacer scroll
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
-    }
-  }, [lastScrollY, isMobileMenuOpen]);
+  // Cerrar menú móvil al hacer scroll - DESACTIVADO para evitar conflictos
+  // useEffect(() => {
+  //   if (isMobileMenuOpen) {
+  //     setIsMobileMenuOpen(false);
+  //   }
+  // }, [lastScrollY, isMobileMenuOpen]);
 
   return (
     <>
@@ -92,19 +92,6 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* Botón de menú hamburguesa para móvil - SIEMPRE VISIBLE */}
-      <button
-        className="md:hidden fixed top-4 right-4 z-50 text-white/80 hover:text-brand-light-blue transition-colors duration-300 bg-black/30 backdrop-blur-sm rounded-full p-2"
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        {isMobileMenuOpen ? (
-          <X className="h-6 w-6" />
-        ) : (
-          <Menu className="h-6 w-6" />
-        )}
-      </button>
-
       {/* ===== NAVBAR QUE APARECE AL HACER SCROLL ===== */}
       <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-out ${
         isNavbarVisible 
@@ -113,10 +100,28 @@ const Header = () => {
       }`}>
         <div className="relative bg-gradient-to-b from-black/80 via-black/60 to-black/0 pb-8 md:pb-0">
           <div className="absolute inset-0 backdrop-blur-xl md:backdrop-blur-xl" style={{
-            maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+            maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)'
           }}></div>
           <div className="container mx-auto px-4 md:px-6 py-2 md:py-3 relative">
+            {/* Botón hamburguesa en móvil - dentro del navbar */}
+            <button
+              className="md:hidden absolute top-4 right-4 z-[70] text-white/80 hover:text-brand-light-blue transition-colors duration-300 p-2"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+              }}
+              aria-label="Toggle menu"
+              type="button"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+
             {/* ===== LOGO DENTRO DEL NAVBAR ===== */}
             {/* Este logo aparece cuando el navbar se muestra al hacer scroll */}
             {/* Para modificar: ajustar top-*, h-*, w-*, md:h-*, md:w-* */}
@@ -150,7 +155,7 @@ const Header = () => {
               </nav>
 
               {/* Menú de navegación - Mobile */}
-              <div className={`md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transition-all duration-300 ease-in-out ${
+              <div className={`md:hidden fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl transition-all duration-300 ease-in-out ${
                 isMobileMenuOpen 
                   ? 'translate-y-0 opacity-100' 
                   : '-translate-y-full opacity-0 pointer-events-none'

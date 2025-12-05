@@ -8,23 +8,32 @@ const Preloader = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    let progressInterval: NodeJS.Timeout;
+    let hasReachedHundred = false;
+
     // Simular progreso de carga
-    const progressInterval = setInterval(() => {
+    progressInterval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
+          hasReachedHundred = true;
           clearInterval(progressInterval);
           return 100;
         }
-        return prev + 10;
+        return prev + 5;
       });
-    }, 150);
+    }, 100);
 
-    // Esperar a que todas las imágenes se carguen
+    // Esperar a que todas las imágenes se carguen Y que el progreso llegue a 100
     const handleLoad = () => {
-      // Pequeño delay para asegurar que todo esté listo
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
+      // Esperar a que el progreso llegue a 100 antes de ocultar
+      const checkProgress = setInterval(() => {
+        if (hasReachedHundred) {
+          clearInterval(checkProgress);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 800);
+        }
+      }, 100);
     };
 
     // Verificar si el documento ya está completamente cargado

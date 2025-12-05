@@ -11,7 +11,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 120px; /* Para compensar el header fijo */
+    scroll-padding-top: 0px; /* Sin padding para que cargue desde el inicio */
   }
   body {
     @apply bg-brand-dark-blue text-brand-slate font-sans overflow-x-hidden;
@@ -176,14 +176,31 @@
   background: linear-gradient(to bottom, #4cc9f0, #003f5c);
 }
 
-/* Estilos para cursor personalizado */
-.custom-cursor a,
-.custom-cursor button,
-.custom-cursor .btn-primary,
-.custom-cursor .btn-secondary,
-.custom-cursor input,
-.custom-cursor textarea {
-  cursor: none !important;
+/* Estilos para cursor personalizado - Solo en escritorio */
+@media (min-width: 769px) {
+  .custom-cursor {
+    cursor: none !important;
+  }
+
+  .custom-cursor *,
+  .custom-cursor a,
+  .custom-cursor button,
+  .custom-cursor .btn-primary,
+  .custom-cursor .btn-secondary,
+  .custom-cursor input,
+  .custom-cursor textarea {
+    cursor: none !important;
+  }
+}
+
+/* En móvil y tablet, mostrar cursor normal */
+@media (max-width: 768px) {
+  .custom-cursor,
+  .custom-cursor *,
+  .custom-cursor a,
+  .custom-cursor button {
+    cursor: auto !important;
+  }
 }
 
 /* Mejorar la selección de texto */
