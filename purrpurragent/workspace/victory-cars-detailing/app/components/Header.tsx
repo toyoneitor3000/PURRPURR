@@ -104,9 +104,9 @@ const Header = () => {
             WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)'
           }}></div>
           <div className="container mx-auto px-4 md:px-6 py-2 md:py-3 relative">
-            {/* Botón hamburguesa en móvil - dentro del navbar */}
+            {/* Botón hamburguesa en móvil - SIEMPRE VISIBLE */}
             <button
-              className="md:hidden absolute top-4 right-4 z-[70] text-white/80 hover:text-brand-light-blue transition-colors duration-300 p-2"
+              className="md:hidden fixed top-4 right-4 z-[70] text-white/80 hover:text-brand-light-blue transition-colors duration-300 p-2 bg-black/50 backdrop-blur-md rounded-lg"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
