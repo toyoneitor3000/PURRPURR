@@ -11,7 +11,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Para compensar el header fijo */
+    scroll-padding-top: 120px; /* Para compensar el header fijo */
   }
   body {
     @apply bg-brand-dark-blue text-brand-slate font-sans overflow-x-hidden;

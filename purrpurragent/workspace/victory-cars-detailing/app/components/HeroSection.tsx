@@ -76,13 +76,6 @@ const HeroSection: React.FC = () => {
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-cyan rounded-full shadow-[0_0_10px_#06b6d4] animate-pulse" style={{animationDelay: '1s'}}></span> Garantía Real
           </div>
         </div>
-        
-        {/* Flecha indicadora de scroll */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-brand-light-blue/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-brand-light-blue/70 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
       </div>
     </section>
   );
