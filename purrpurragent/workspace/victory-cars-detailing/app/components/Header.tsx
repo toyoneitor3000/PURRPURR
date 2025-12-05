@@ -155,31 +155,56 @@ const Header = () => {
               </nav>
 
               {/* Menú de navegación - Mobile */}
-              <div className={`md:hidden fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl transition-all duration-300 ease-in-out ${
+              <div className={`md:hidden fixed inset-0 z-[60] transition-all duration-500 ease-in-out ${
                 isMobileMenuOpen 
-                  ? 'translate-y-0 opacity-100' 
-                  : '-translate-y-full opacity-0 pointer-events-none'
+                  ? 'opacity-100' 
+                  : 'opacity-0 pointer-events-none'
               }`}>
-                <div className="flex flex-col items-center justify-center h-full space-y-8">
-                  {navLinks.map(link => (
-                    <Link 
-                      key={link.href} 
-                      href={link.href} 
-                      onClick={handleNavLinkClick}
-                      className="text-2xl font-bold tracking-widest uppercase text-white/90 hover:text-brand-light-blue transition-all duration-300 hover:scale-105 font-orbitron relative group py-2"
+                {/* Overlay oscuro para el fondo */}
+                <div className="absolute inset-0 bg-black/90 backdrop-blur-xl"></div>
+                
+                {/* Contenedor del menú centrado */}
+                <div className="relative flex items-center justify-center h-full px-6">
+                  <div className="w-full max-w-md space-y-6">
+                    {/* Enlaces del menú */}
+                    <nav className="flex flex-col space-y-5">
+                      {navLinks.map((link, index) => (
+                        <Link 
+                          key={link.href} 
+                          href={link.href} 
+                          onClick={handleNavLinkClick}
+                          className="group"
+                          style={{
+                            animation: isMobileMenuOpen ? `fadeInUp 0.5s ease-out ${index * 0.1}s both` : 'none'
+                          }}
+                        >
+                          <div className="relative bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl px-8 py-5 hover:from-brand-cyan/20 hover:to-brand-light-blue/20 hover:border-brand-cyan/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]">
+                            <span className="text-xl font-bold tracking-widest uppercase text-white group-hover:text-brand-cyan transition-colors duration-300 font-orbitron block text-center">
+                              {link.label}
+                            </span>
+                          </div>
+                        </Link>
+                      ))}
+                    </nav>
+
+                    {/* Botón de contacto */}
+                    <div 
+                      className="pt-4"
+                      style={{
+                        animation: isMobileMenuOpen ? 'fadeInUp 0.5s ease-out 0.4s both' : 'none'
+                      }}
                     >
-                      {link.label}
-                      <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-light-blue transition-all duration-300 group-hover:w-3/4"></span>
-                    </Link>
-                  ))}
-                  <a 
-                    href="https://wa.me/573124730909" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="mt-8 bg-gradient-to-r from-brand-cyan/90 to-brand-light-blue/90 text-white font-bold py-3 px-8 rounded-full hover:from-brand-cyan hover:to-brand-light-blue transition-all duration-300 items-center gap-2 text-sm shadow-[0_0_15px_rgba(6,182,212,0.4)] font-orbitron tracking-wide hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] backdrop-blur-sm flex"
-                  >
-                    Contacto <ArrowRight className="h-4 w-4 ml-2" />
-                  </a>
+                      <a 
+                        href="https://wa.me/573124730909" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-full bg-gradient-to-r from-brand-cyan to-brand-light-blue text-brand-dark-blue font-bold py-5 px-8 rounded-xl hover:shadow-[0_0_40px_rgba(6,182,212,0.8)] transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.5)] font-orbitron tracking-widest hover:scale-[1.02] flex items-center justify-center gap-3 group uppercase text-base"
+                      >
+                        <span>Contáctanos</span>
+                        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
               
