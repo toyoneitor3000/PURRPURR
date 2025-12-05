@@ -22,6 +22,7 @@ const Logo = () => (
       src="/logo.png"
       alt="Victory Cars Detailing"
       fill
+      sizes="(max-width: 768px) 192px, 256px"
       style={{ objectFit: "contain" }}
       className="object-left"
       priority

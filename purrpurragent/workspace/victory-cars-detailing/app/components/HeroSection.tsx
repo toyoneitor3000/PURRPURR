@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark-blue">
+    <section className="relative h-[85vh] min-h-[400px] max-h-[700px] md:h-[90vh] md:min-h-[500px] md:max-h-[800px] lg:h-screen lg:min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark-blue">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <Carousel images={heroImages} interval={4000} />

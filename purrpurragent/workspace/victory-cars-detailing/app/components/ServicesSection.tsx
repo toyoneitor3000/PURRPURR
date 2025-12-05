@@ -18,7 +18,7 @@ const ServicesSection: React.FC = () => {
           {/* PROTECCIÓN CERÁMICA - SYLEX 9H */}
           <ServiceCard
             title="Protección Cerámica SYLEX 9H"
-            imageUrl="/services/ceramic-coating.jpg"
+            imageUrl="/services/silex.png"
             promotion="3 AÑOS GARANTÍA"
             benefits={[
               "Cerámico en todos los vidrios incluido",
@@ -44,7 +44,7 @@ const ServicesSection: React.FC = () => {
           {/* CRYSTAL SYSTEM X */}
           <ServiceCard
             title="Crystal System X USA"
-            imageUrl="/services/ceramic-coating.jpg"
+            imageUrl="/services/systemx.png"
             promotion="5 AÑOS GARANTÍA"
             benefits={[
               "Tecnología americana de élite",
@@ -70,7 +70,7 @@ const ServicesSection: React.FC = () => {
           {/* GTECHNIQ PREMIUM */}
           <ServiceCard
             title="GTECHNIQ Crystal Serum Light"
-            imageUrl="/services/ceramic-coating.jpg"
+            imageUrl="/services/csl.png"
             promotion="5 AÑOS PREMIUM UK"
             benefits={[
               "Tecnología británica de élite mundial",

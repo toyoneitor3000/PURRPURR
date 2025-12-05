@@ -52,6 +52,9 @@ const Footer: React.FC = () => {
       </div>
       <div className="container mx-auto px-4 mt-16 pt-8 border-t border-white/5 text-center text-xs text-brand-slate/40">
         &copy; {new Date().getFullYear()} Victory Cars S.A.S. Todos los derechos reservados.
+        <div className="mt-2">
+          Diseñado y desarrollado por <a href="https://purrpurr.dev" target="_blank" rel="noopener noreferrer" className="text-brand-cyan hover:text-white transition-colors">purrpurr.dev</a>
+        </div>
       </div>
     </footer>
   );

@@ -5,158 +5,153 @@
 **VICTORY CARS** es el nombre del detailing y las características visuales son:
 - ✅ **Nombre:** VICTORY CARS (usar en todas las fotos)
 - ✅ **Paredes del taller:** NEGRAS
-- ✅ **Iluminación:** LED profesional
+- ✅ **Iluminación:** LED profesional (reflectores pequeños a 90 grados)
+- ✅ **Merchandising:** "VC Detailing" visible en uniformes/herramientas
 - ✅ **Estética:** Moderna, premium, minimalista
 
-## 📁 Ubicación de las Imágenes
+## 📁 ESTRUCTURA COMPLETA DE IMÁGENES DEL SITIO
 
-Todas las imágenes deben guardarse en:
-```
-/public/services/
-```
+### 1. 🖼️ **CARRUSEL HERO (Sección Principal - "ARTESANOS DE LA PERFECCIÓN")**
+**Ubicación:** `public/carrusel/`
+**Propósito:** Imágenes de fondo del carrusel hero (sección principal arriba del fold)
+**Especificaciones:**
+- Formato: WebP (optimizado)
+- Tamaño: < 500 KB cada una
+- Dimensiones: Mínimo 1920x1080px (16:9)
+- Cantidad: 7 imágenes actuales
 
-## 🖼️ Imágenes Actuales (Ya existen)
+**Imágenes actuales:**
+1. `IMG_0547.webp`
+2. `IMG_0556.webp`
+3. `IMG_5419.webp`
+4. `IMG_0561 2.webp` (nota: espacio en el nombre)
+5. `IMG_0583.webp`
+6. `IMG_5440.webp`
+7. `IMG_0584 2.webp` (nota: espacio en el nombre)
 
-✅ `/public/services/aqua-wash.jpg` - Lavado Premium
-✅ `/public/services/ceramic-coating.jpg` - Protección Cerámica
-✅ `/public/services/detailing-pro-finish.jpg` - Detailing
-✅ `/public/services/ppf.jpg` - PPF Protection
-✅ `/public/services/sun-guard.jpg` - Polarizado
-✅ `/public/services/upholstery.jpg` - Tapicería
+### 2. 🛠️ **SERVICIOS (Sección "Nuestros Servicios")**
+**Ubicación:** `public/services/`
+**Propósito:** Iconos/thumbnails para cada servicio ofrecido
+**Especificaciones:**
+- Formato: JPG o WebP
+- Tamaño: < 300 KB
+- Dimensiones: 800x600px (4:3)
 
-## 🎨 Imágenes Generadas con Branding Correcto
+**Imágenes actuales:**
+- ✅ `aqua-wash.jpg` - Lavado Premium
+- ✅ `basic-wash.jpg` - Lavado Normal
+- ✅ `ceramic-coating.jpg` - Protección Cerámica
+- ✅ `detailing-pro-finish.jpg` - Detailing Profesional
+- ✅ `glass-polish.jpg` - Brillado de Vidrios
+- ✅ `ppf.jpg` - PPF Protection
+- ✅ `style-wrap.jpg` - Personalización Style Wrap
+- ✅ `sun-guard.jpg` - Polarizado SUN GUARD
+- ✅ `upholstery.jpg` - Tapicería
+- ✅ `wheel-wash.jpg` - Lavado Llanta a Llanta
 
-He generado placeholders profesionales con el branding de VICTORY CARS y paredes negras:
+### 3. 🖼️ **GALERÍA BEFORE/AFTER (3 COMPARATIVAS ESPECÍFICAS)**
+**Ubicación:** `public/gallery/`
+**Propósito:** Comparativas antes/después para demostrar resultados
+**Especificaciones:**
+- Formato: JPG
+- Tamaño: < 400 KB
+- Dimensiones: 1200x800px (3:2)
+- **IMPORTANTE:** Para el efecto mágico del slider, las imágenes BEFORE y AFTER deben tener EXACTAMENTE el mismo ángulo, iluminación y composición.
 
-### 1. **ceramic_coating_victory.png** ✨
-- **Uso:** Servicios de protección cerámica (SYLEX, Crystal System X, GTECHNIQ)
-- **Descripción:** Aplicación de cerámico 9H en VICTORY CARS con paredes negras
-- **Guardar como:** `/public/services/ceramic-coating.jpg`
+#### **COMPARATIVA 1: MICRO-RAYONES (SWIRL MARKS)**
+**Nombres de archivo:**
+- `swirl-marks-before.jpg` - Antes: Micro-rayones visibles bajo luz rasante
+- `swirl-marks-after.jpg` - Después: Pintura perfectamente corregida
 
-### 2. **motor_detailing_victory.png** ✨
-- **Uso:** Detallado de Motor
-- **Descripción:** Motor limpio en taller VICTORY CARS con paredes negras
-- **Guardar como:** `/public/services/motor-detailing.jpg`
+**Especificaciones:**
+- Vehículo: Mercedes-Benz GLE 2023 Gris Iridium
+- Ubicación: Puerta del conductor, panel lateral
+- Ángulo: Plano medio-corto
+- Iluminación: 2 reflectores LED pequeños a 90 grados
 
-### Imágenes adicionales recomendadas (tomar fotos reales):
+#### **COMPARATIVA 2: INTERIOR**
+**Nombres de archivo:**
+- `interior-before.jpg` - Antes: Interior sucio y desgastado
+- `interior-after.jpg` - Después: Interior perfectamente detallado
 
-3. **Style Wrap** → `/public/services/style-wrap.jpg`
-   - Aplicación de vinilo en VICTORY CARS
-   - Fondo: paredes negras del taller
+**Especificaciones:**
+- Vehículo: BMW X7 2024 Negro Carbon
+- Ubicación: Interior completo (asientos, consola, volante)
+- Ángulo: Plano general desde asiento trasero
+- Iluminación: Luz natural + reflector LED a 45 grados
 
-4. **Brillado de Vidrios** → `/public/services/glass-polish.jpg`
-   - Pulido de vidrios en VICTORY CARS
-   - Fondo: paredes negras del taller
+#### **COMPARATIVA 3: PINTURA**
+**Nombres de archivo:**
+- `paint-before.jpg` - Antes: Pintura desgastada con defectos (ya existe)
+- `paint-after.jpg` - Después: Pintura restaurada a perfección (ya existe)
 
-5. **Mantenimiento Cerámico** → `/public/services/ceramic-maintenance.jpg`
-   - Aplicación de SiO2 en VICTORY CARS
-   - Fondo: paredes negras del taller
+**Especificaciones:**
+- Vehículo: Porsche 911 Carrera 4S 2023 Rojo Carmine
+- Ubicación: Capó completo y guardafango derecho
+- Ángulo: Plano americano 3/4 frontal
+- Iluminación: 3 reflectores LED (principal, fill, hair light)
 
-## 📋 Imágenes Recomendadas para Agregar
+### 4. 🏢 **IMÁGENES GENERALES DEL SITIO**
+**Ubicación:** `public/`
+**Propósito:** Imágenes de uso general en toda la página
 
-Para completar el catálogo con fotos REALES de VICTORY CARS:
+**Imágenes actuales:**
+- ✅ `about-us.jpg` - Imagen para sección "Sobre Nosotros"
+- ✅ `hero-bg.jpg` - Imagen de fondo alternativa
+- ✅ `logo.png` - Logo principal de VICTORY CARS (512x512px, PNG transparente)
 
-### Servicios que necesitan imágenes propias:
-1. **Lavado Normal** → `/public/services/basic-wash.jpg`
-2. **Lavado Llanta a Llanta** → `/public/services/wheel-wash.jpg`
-3. **Pintura Color Match** → `/public/services/paint-match.jpg`
-4. **Tapicería (actualizar)** → `/public/services/upholstery.jpg`
-5. **PPF (actualizar)** → `/public/services/ppf.jpg`
+### 5. 📱 **IMÁGENES RESPONSIVE Y OPTIMIZACIÓN**
 
-## 🎯 Especificaciones Técnicas para Fotos
+**Configuración Next.js (next.config.mjs):**
+- Formatos soportados: WebP, AVIF
+- Device Sizes: 640, 750, 828, 1080, 1200, 1920, 2048, 3840px
+- Image Sizes: 16, 32, 48, 64, 96, 128, 256, 384px
+- Cache: 30 días
 
-### Configuración de Cámara:
-- **Formato:** JPG o WebP (para mejor rendimiento)
-- **Dimensiones mínimas:** 1200x800px
-- **Aspect Ratio:** 3:2 o 16:9
-- **Tamaño de archivo:** Máximo 500KB (optimizado)
-- **Calidad:** Alta resolución pero optimizada para web
+## 📋 **CHECKLIST DE IMPLEMENTACIÓN**
 
-### Composición Visual:
-- ✅ **Fondo:** Paredes NEGRAS del taller VICTORY CARS
-- ✅ **Iluminación:** LED profesional, evitar sombras duras
-- ✅ **Ángulo:** Mostrar el trabajo en proceso o resultado final
-- ✅ **Branding:** Incluir logo de VICTORY CARS cuando sea posible
-- ✅ **Detalles:** Enfoque en el acabado premium y profesional
+### ✅ COMPLETADO:
+- [x] Estructura de carpetas creada
+- [x] Placeholders para servicios generados
+- [x] Configuración Next.js optimizada
+- [x] Carrusel hero con 7 imágenes
+- [x] Logo profesional en PNG transparente
 
-## 📸 Guía de Fotografía por Servicio
+### 🔄 EN PROCESO:
+- [ ] Tomar fotos reales del taller VICTORY CARS
+- [ ] Convertir formatos a WebP donde sea posible
 
-### 1. **Protección Cerámica**
-- Mostrar: Aplicación del cerámico, efecto hidrofóbico con gotas de agua
-- Fondo: Paredes negras
-- Detalle: Brillo intenso del acabado
+### ✅ **ARCHIVOS CREADOS Y OPTIMIZADOS:**
 
-### 2. **Lavados**
-- Mostrar: Proceso de lavado, espuma, secado
-- Fondo: Área de lavado con paredes negras
-- Detalle: Vehículo brillante
+**En carpeta `public/gallery/`:**
+1. ✅ `swirl-marks-before.jpg` - Micro-rayones visibles (73KB, calidad 95%)
+2. ✅ `swirl-marks-after.jpg` - Pintura corregida (58KB, calidad 95%)
+3. ✅ `interior-before.jpg` - Interior sucio (197KB, calidad 95%)
+4. ✅ `interior-after.jpg` - Interior detallado (171KB, calidad 95%)
+5. ✅ `paint-before.jpg` - Pintura desgastada (222KB, calidad 95%)
+6. ✅ `paint-after.jpg` - Pintura restaurada (78KB, calidad 95%)
 
-### 3. **Tapicería**
-- Mostrar: Proceso de inyección-succión, vapor
-- Fondo: Interior del taller, paredes negras
-- Detalle: Tapicería limpia vs sucia (antes/después)
+**Todas las imágenes están optimizadas con calidad 95% y tamaño menor a 400KB.**
 
-### 4. **Motor**
-- Mostrar: Motor limpio y detallado
-- Fondo: Paredes negras del taller
-- Detalle: Componentes brillantes
+## 🔗 **REFERENCIAS DE ARCHIVOS EN CÓDIGO**
 
-### 5. **Polarizado**
-- Mostrar: Aplicación de película, resultado final
-- Fondo: Área de trabajo con paredes negras
-- Detalle: Película sin burbujas, acabado perfecto
+### Componentes que usan imágenes:
 
-### 6. **PPF**
-- Mostrar: Aplicación de película protectora
-- Fondo: Paredes negras
-- Detalle: Película invisible, protección completa
+1. **HeroSection.tsx** → `public/carrusel/*.webp`
+2. **ServicesSection.tsx** → `public/services/*.jpg`
+3. **BeforeAfterGallery.tsx** → `public/gallery/*.jpg`
+4. **ContactSection.tsx** → `public/logo.png`
+5. **layout.tsx** → `public/logo.png`
+6. **ServiceCard.tsx** → `public/services/*.jpg`
 
-### 7. **Personalización**
-- Mostrar: Proceso de vinilado, resultado final
-- Fondo: Paredes negras del taller
-- Detalle: Acabado personalizado
-
-## 🔄 Cómo Usar las Imágenes Generadas
-
-1. **Las imágenes generadas están en la carpeta de artifacts**
-2. **Cópialas a `/public/services/` con los nombres correctos**
-3. **O úsalas como referencia para tomar fotos reales**
-
-## ✨ Tips para Mejores Fotos de VICTORY CARS
-
-1. **Iluminación:** Usa las luces LED del taller, evita flash directo
-2. **Ángulos:** Captura el proceso y el resultado final
-3. **Enfoque:** Muestra el detalle del trabajo profesional
-4. **Branding:** Incluye elementos de VICTORY CARS (logo, uniformes, etc.)
-5. **Calidad:** Usa cámara profesional o smartphone de alta gama
-6. **Consistencia:** Todas las fotos con paredes NEGRAS de fondo
-7. **Limpieza:** Asegúrate de que el área esté ordenada
-8. **Contraste:** Las paredes negras harán resaltar los vehículos brillantes
-
-## 🚀 Próximos Pasos
-
-1. ✅ Placeholders generados con branding correcto
-2. ⏳ Copiar imágenes generadas a `/public/services/`
-3. ⏳ Tomar fotos profesionales REALES en VICTORY CARS
-4. ⏳ Asegurar que todas las fotos muestren paredes NEGRAS
-5. ⏳ Reemplazar placeholders con fotos reales
-6. ⏳ Optimizar imágenes para web
-
-## 📝 Checklist de Fotos Necesarias
-
-- [ ] Cerámico SYLEX 9H (paredes negras)
-- [ ] Cerámico Crystal System X (paredes negras)
-- [ ] Cerámico GTECHNIQ (paredes negras)
-- [ ] Lavado Premium Aqua Wash (paredes negras)
-- [ ] Lavado Detailing (paredes negras)
-- [ ] Tapicería Full Clean (paredes negras)
-- [ ] Polarizado SUN GUARD (paredes negras)
-- [ ] PPF Protection (paredes negras)
-- [ ] Brillado de Vidrios (paredes negras)
-- [ ] Personalización Style Wrap (paredes negras)
-- [ ] Detallado de Motor (paredes negras)
-- [ ] Mantenimiento Cerámico (paredes negras)
+### Rutas absolutas vs relativas:
+- Rutas absolutas: `'/carrusel/IMG_0547.webp'`
+- Rutas relativas: `'/services/aqua-wash.jpg'`
 
 ---
 
-**Nota:** Las imágenes con el branding correcto de VICTORY CARS y paredes negras ya están generadas y listas para usar. Puedes usarlas temporalmente mientras tomas fotos reales del taller.
+**Última actualización:** 4 de Diciembre, 2025  
+**Responsable:** Equipo de Marketing VICTORY CARS  
+**Estado:** Fase de implementación - 70% completado
+
+> **Nota:** Este documento debe actualizarse cada vez que se agreguen nuevas imágenes o se modifique la estructura del sitio.

@@ -89,7 +89,13 @@ export const ComparisonSlider = ({
       >
         {/* After image – full background */}
         <div className="absolute inset-0">
-          <Image src={afterImage} alt="After" fill className="object-cover" />
+          <Image 
+            src={afterImage} 
+            alt="After" 
+            fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            className="object-cover" 
+          />
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-brand-cyan px-3 py-1 rounded text-sm font-bold tracking-widest font-orbitron">
             DESPUÉS
@@ -103,7 +109,13 @@ export const ComparisonSlider = ({
             clipPath: `polygon(0 0, ${position}% 0, ${position}% 100%, 0 100%)`,
           }}
         >
-          <Image src={beforeImage} alt="Before" fill className="object-cover" />
+          <Image 
+            src={beforeImage} 
+            alt="Before" 
+            fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            className="object-cover" 
+          />
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white px-3 py-1 rounded text-sm font-bold tracking-widest font-orbitron">
             ANTES

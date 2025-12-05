@@ -20,17 +20,17 @@ const BeforeAfterGallery: React.FC = () => {
 
         <div className="space-y-24 max-w-5xl mx-auto">
           <ComparisonSlider 
-            label="Corrección de Pintura: Eliminación de Swirls"
-            beforeImage="/gallery/paint-before.jpg" 
-            afterImage="/gallery/paint-after.jpg" 
+            label="Corrección de Micro-rayones (Swirl Marks)"
+            beforeImage="/gallery/swirl-marks-before.jpg" 
+            afterImage="/gallery/swirl-marks-after.jpg" 
           />
           <ComparisonSlider 
-            label="Restauración de Faros y Plásticos"
-            beforeImage="/gallery/paint-before.jpg" 
-            afterImage="/gallery/paint-after.jpg" 
+            label="Detailing Interior Profundo"
+            beforeImage="/gallery/interior-before.jpg" 
+            afterImage="/gallery/interior-after.jpg" 
           />
            <ComparisonSlider 
-            label="Detailing Interior Profundo"
+            label="Restauración Completa de Pintura"
             beforeImage="/gallery/paint-before.jpg" 
             afterImage="/gallery/paint-after.jpg" 
           />
