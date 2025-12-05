@@ -84,7 +84,7 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
         {/* Logo de Victory Cars - visible arriba, se desvanece con scroll */}
         <div
-          className="flex justify-center mb-24 md:mb-12 pt-[250px] md:pt-0 transition-opacity duration-500"
+          className="flex justify-center mb-12 md:mb-12 pt-[100px] md:pt-0 transition-opacity duration-500"
           style={{ opacity: logoOpacity }}
         >
           <Link href="/" className="block">
