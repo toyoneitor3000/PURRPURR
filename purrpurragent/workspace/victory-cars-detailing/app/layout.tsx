@@ -6,6 +6,7 @@ import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import ScrollReveal from './components/ScrollReveal';
 import VisualEffects from './components/VisualEffects';
 import Header from './components/Header';
+import Preloader from './components/Preloader';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const orbitron = Orbitron({ subsets: ['latin'], weight: ['400', '700', '900'], variable: '--font-orbitron' });
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.variable} ${orbitron.variable} ${styleScript.variable} font-sans bg-brand-dark-blue text-brand-slate selection:bg-brand-cyan selection:text-brand-dark-blue custom-cursor`}>
+        <Preloader />
         <Header />
 
         {children}
