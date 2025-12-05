@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { href: '/#about', label: 'About Us' },
@@ -15,6 +15,7 @@ const Header = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [logoOpacity, setLogoOpacity] = useState(1);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +56,18 @@ const Header = () => {
     };
   }, [lastScrollY]);
 
+  // Cerrar menú móvil al hacer clic en un enlace
+  const handleNavLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Cerrar menú móvil al hacer scroll
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [lastScrollY, isMobileMenuOpen]);
+
   return (
     <>
       {/* ===== LOGO INDEPENDIENTE (pre-navbar) ===== */}
@@ -79,16 +92,29 @@ const Header = () => {
         </Link>
       </div>
 
+      {/* Botón de menú hamburguesa para móvil - SIEMPRE VISIBLE */}
+      <button
+        className="md:hidden fixed top-4 right-4 z-50 text-white/80 hover:text-brand-light-blue transition-colors duration-300 bg-black/30 backdrop-blur-sm rounded-full p-2"
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        aria-label="Toggle menu"
+      >
+        {isMobileMenuOpen ? (
+          <X className="h-6 w-6" />
+        ) : (
+          <Menu className="h-6 w-6" />
+        )}
+      </button>
+
       {/* ===== NAVBAR QUE APARECE AL HACER SCROLL ===== */}
       <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-out ${
         isNavbarVisible 
           ? 'translate-y-0 opacity-100' 
           : '-translate-y-full opacity-0'
       }`}>
-        <div className="relative bg-gradient-to-b from-black/80 via-black/60 to-black/0">
-          <div className="absolute inset-0 backdrop-blur-xl" style={{
-            maskImage: 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
+        <div className="relative bg-gradient-to-b from-black/80 via-black/60 to-black/0 pb-8 md:pb-0">
+          <div className="absolute inset-0 backdrop-blur-xl md:backdrop-blur-xl" style={{
+            maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
           }}></div>
           <div className="container mx-auto px-4 md:px-6 py-2 md:py-3 relative">
             {/* ===== LOGO DENTRO DEL NAVBAR ===== */}
@@ -109,7 +135,8 @@ const Header = () => {
             
             {/* Contenido del navbar (navegación y botón) */}
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-between">
-              <nav className="flex items-center gap-4 md:gap-8 order-3 md:order-2 w-full md:w-auto justify-center mt-2 md:mt-2">
+              {/* Menú de navegación - Desktop */}
+              <nav className="hidden md:flex items-center gap-4 md:gap-8 order-3 md:order-2 w-full md:w-auto justify-center mt-2 md:mt-2">
                 {navLinks.map(link => (
                   <Link 
                     key={link.href} 
@@ -121,6 +148,35 @@ const Header = () => {
                   </Link>
                 ))}
               </nav>
+
+              {/* Menú de navegación - Mobile */}
+              <div className={`md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transition-all duration-300 ease-in-out ${
+                isMobileMenuOpen 
+                  ? 'translate-y-0 opacity-100' 
+                  : '-translate-y-full opacity-0 pointer-events-none'
+              }`}>
+                <div className="flex flex-col items-center justify-center h-full space-y-8">
+                  {navLinks.map(link => (
+                    <Link 
+                      key={link.href} 
+                      href={link.href} 
+                      onClick={handleNavLinkClick}
+                      className="text-2xl font-bold tracking-widest uppercase text-white/90 hover:text-brand-light-blue transition-all duration-300 hover:scale-105 font-orbitron relative group py-2"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-light-blue transition-all duration-300 group-hover:w-3/4"></span>
+                    </Link>
+                  ))}
+                  <a 
+                    href="https://wa.me/573124730909" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="mt-8 bg-gradient-to-r from-brand-cyan/90 to-brand-light-blue/90 text-white font-bold py-3 px-8 rounded-full hover:from-brand-cyan hover:to-brand-light-blue transition-all duration-300 items-center gap-2 text-sm shadow-[0_0_15px_rgba(6,182,212,0.4)] font-orbitron tracking-wide hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] backdrop-blur-sm flex"
+                  >
+                    Contacto <ArrowRight className="h-4 w-4 ml-2" />
+                  </a>
+                </div>
+              </div>
               
               <div className="order-2 md:order-3 md:ml-auto mt-2 md:mt-2">
                 <a 

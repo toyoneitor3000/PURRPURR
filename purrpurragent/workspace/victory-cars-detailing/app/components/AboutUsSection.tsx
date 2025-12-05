@@ -37,34 +37,91 @@ const AboutUsSection: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Sección original About Us */}
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20 mb-24">
-          <div className="md:w-1/2 relative">
-            <div className="absolute -inset-4 bg-brand-cyan/20 rounded-xl blur-2xl -z-10"></div>
-            <div className="relative h-[400px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              {/* Placeholder image since we know images are missing, adding a colored div as fallback */}
-              <div className="absolute inset-0 bg-brand-mid-blue flex items-center justify-center text-brand-slate">
-                [Imagen Taller / Equipo]
-              </div>
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-24">
+          <div className="w-full md:w-1/2 relative group">
+            {/* Efectos de fondo mejorados */}
+            <div className="absolute -inset-6 bg-gradient-to-r from-brand-cyan/30 via-brand-light-blue/20 to-brand-cyan/30 rounded-2xl blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+            <div className="absolute -inset-2 bg-gradient-to-br from-brand-cyan/10 to-transparent rounded-2xl"></div>
+            
+            {/* Contenedor de imagen con efectos */}
+            <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden border-2 border-brand-cyan/20 shadow-[0_0_50px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_80px_rgba(6,182,212,0.5)] transition-all duration-500 group-hover:scale-[1.02]">
               <Image
                 src="/about-us.jpg"
                 alt="Victory Cars S.A.S. Taller"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
-                className="opacity-80"
+                className="opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                priority
               />
+              {/* Overlay con gradiente mejorado */}
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark-blue/80 via-brand-dark-blue/20 to-transparent"></div>
+              
+              {/* Badge decorativo */}
+              <div className="absolute top-4 right-4 bg-gradient-to-r from-brand-cyan to-brand-light-blue text-brand-dark-blue font-bold px-4 py-2 rounded-full text-xs font-orbitron shadow-lg">
+                CERTIFICADO IGL
+              </div>
             </div>
           </div>
-          <div className="md:w-1/2 text-brand-slate">
-            <h2 className="text-4xl font-bold text-white mb-6 font-orbitron">Artesanos de la <span className="text-brand-cyan">Perfección</span></h2>
-            <p className="text-lg leading-relaxed mb-6 font-light">
-              En <span className="font-orbitron text-white">VICTORY CARS</span> no solo lavamos autos; <span className="text-white font-medium">restauramos obras de ingeniería</span>. Somos un centro especializado en protección y personalización automotriz de alto calibre.
-            </p>
-            <p className="text-lg leading-relaxed mb-8 font-light">
-              Combinamos tecnología de vanguardia, técnicas de corrección milimétrica y productos premium como <span className="text-brand-cyan font-bold">IGL Coatings</span> para garantizar que su inversión mantenga su valor y estética por años.
-            </p>
-            <a href="https://wa.me/573124730909?text=Hola,%20deseo%20conocer%20más%20sobre%20Victory%20Cars." target="_blank" rel="noopener noreferrer" className="text-brand-cyan border-b border-brand-cyan pb-1 hover:text-white hover:border-white transition-all duration-300 text-sm tracking-widest uppercase font-bold font-orbitron">
-              Contáctanos
-            </a>
+          
+          <div className="w-full md:w-1/2 text-brand-slate space-y-6">
+            {/* Título mejorado */}
+            <div className="space-y-3">
+              <div className="inline-block">
+                <span className="text-brand-cyan text-sm font-bold tracking-widest uppercase font-orbitron">Sobre Nosotros</span>
+                <div className="h-0.5 w-16 bg-gradient-to-r from-brand-cyan to-transparent mt-1"></div>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight font-orbitron">
+                Artesanos de la <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-light-blue to-brand-cyan">Perfección</span>
+              </h2>
+            </div>
+            
+            {/* Contenido con mejor espaciado */}
+            <div className="space-y-5">
+              <p className="text-base md:text-lg leading-relaxed font-light text-brand-slate/90">
+                En <span className="font-orbitron text-white font-semibold">VICTORY CARS</span> no solo lavamos autos; <span className="text-white font-medium">restauramos obras de ingeniería</span>. Somos un centro especializado en protección y personalización automotriz de alto calibre.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed font-light text-brand-slate/90">
+                Combinamos tecnología de vanguardia, técnicas de corrección milimétrica y productos premium como <span className="text-brand-cyan font-bold">IGL Coatings</span> para garantizar que su inversión mantenga su valor y estética por años.
+              </p>
+            </div>
+            
+            {/* Stats o características destacadas */}
+            <div className="grid grid-cols-3 gap-4 py-6 border-y border-white/10">
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-brand-cyan font-orbitron">10+</div>
+                <div className="text-xs md:text-sm text-brand-slate/70 mt-1">Años</div>
+              </div>
+              <div className="text-center border-x border-white/10">
+                <div className="text-2xl md:text-3xl font-bold text-brand-cyan font-orbitron">500+</div>
+                <div className="text-xs md:text-sm text-brand-slate/70 mt-1">Clientes</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-brand-cyan font-orbitron">100%</div>
+                <div className="text-xs md:text-sm text-brand-slate/70 mt-1">Garantía</div>
+              </div>
+            </div>
+            
+            {/* CTA mejorado */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <a 
+                href="https://wa.me/573124730909?text=Hola,%20deseo%20conocer%20más%20sobre%20Victory%20Cars." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brand-cyan to-brand-light-blue text-brand-dark-blue font-bold py-3 px-6 rounded-full hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all duration-300 font-orbitron text-sm tracking-wide group"
+              >
+                <span>Contáctanos</span>
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <a 
+                href="#services" 
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand-cyan/30 text-brand-cyan font-bold py-3 px-6 rounded-full hover:bg-brand-cyan/10 hover:border-brand-cyan transition-all duration-300 font-orbitron text-sm tracking-wide"
+              >
+                Ver Servicios
+              </a>
+            </div>
           </div>
         </div>
 
