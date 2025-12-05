@@ -3,18 +3,29 @@ import ServiceCard from './ServiceCard';
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-24 bg-brand-dark-blue relative" id="services">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-brand-mid-blue to-brand-dark-blue -z-10"></div>
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-orbitron">Servicios Premium 2025</h2>
-          <p className="text-brand-slate text-lg max-w-2xl mx-auto mb-6">
+    <section className="py-32 relative overflow-hidden bg-gradient-to-b from-brand-petroleum via-brand-black to-brand-dark-blue" id="services">
+      {/* Fondo con degradados solicitados */}
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-light-blue/20 to-brand-dark-blue/60 opacity-40 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-light-blue/10 via-brand-black/30 to-brand-dark-blue opacity-30 -z-10"></div>
+      
+      {/* Elementos decorativos */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-brand-light-blue/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-petroleum/5 rounded-full blur-3xl -z-10"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20 reveal">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-orbitron tracking-wider">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-light-blue to-blue-400">
+              Servicios Premium 2025
+            </span>
+          </h2>
+          <p className="text-xl md:text-2xl text-brand-slate max-w-3xl mx-auto mb-8 leading-relaxed">
             Tecnología de vanguardia y atención al detalle que transforma tu vehículo
           </p>
-          <div className="h-1 w-24 bg-brand-cyan mx-auto rounded-full shadow-[0_0_15px_#06b6d4]"></div>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-brand-cyan to-brand-light-blue mx-auto rounded-full shadow-[0_0_20px_rgba(76,201,240,0.5)]"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 reveal">
           {/* PROTECCIÓN CERÁMICA - SYLEX 9H */}
           <ServiceCard
             title="Protección Cerámica SYLEX 9H"
@@ -313,7 +324,7 @@ const ServicesSection: React.FC = () => {
           {/* DETALLADO DE MOTOR */}
           <ServiceCard
             title="Detallado de Motor"
-            imageUrl="/services/detailing-pro-finish.jpg"
+            imageUrl="/services/enginewash.jpeg"
             benefits={[
               "Desengrase profesional profundo",
               "Limpieza de componentes",

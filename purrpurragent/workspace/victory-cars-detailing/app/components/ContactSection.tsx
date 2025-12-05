@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="py-24 bg-brand-mid-blue relative overflow-hidden">
+    <section id="contact" className="py-24 bg-brand-mid-blue relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-cyan/5 blur-[100px] rounded-full pointer-events-none"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16">

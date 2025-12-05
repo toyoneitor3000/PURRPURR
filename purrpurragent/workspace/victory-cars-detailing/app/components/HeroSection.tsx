@@ -13,44 +13,74 @@ const HeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative h-[85vh] min-h-[400px] max-h-[700px] md:h-[90vh] md:min-h-[500px] md:max-h-[800px] lg:h-screen lg:min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark-blue">
+    <section className="relative h-screen min-h-[100vh] flex items-center justify-center overflow-hidden bg-brand-dark-blue">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <Carousel images={heroImages} interval={4000} />
       </div>
 
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-dark-blue/80 via-transparent to-brand-dark-blue z-0 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-accent-blue/20 via-brand-dark-blue/50 to-brand-dark-blue z-0 pointer-events-none"></div>
+      {/* Overlays con degradados solicitados */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-petroleum via-brand-black to-brand-dark-blue z-0 pointer-events-none opacity-80"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-light-blue/30 to-brand-dark-blue/70 z-0 pointer-events-none opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-light-blue/20 via-brand-black/50 to-brand-dark-blue z-0 pointer-events-none opacity-70"></div>
+      
+      {/* Efecto de partículas sutil */}
+      <div className="particles">
+        {[...Array(15)].map((_, i) => (
+          <div 
+            key={i}
+            className="particle"
+            style={{
+              width: `${Math.random() * 4 + 1}px`,
+              height: `${Math.random() * 4 + 1}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${Math.random() * 10 + 10}s`
+            }}
+          />
+        ))}
+      </div>
 
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white font-orbitron tracking-normal md:tracking-widest">
+      <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight text-white font-orbitron tracking-normal md:tracking-wider animate-slide-up">
           PERFECCIÓN <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-500 text-glow">PARA TU VEHÍCULO</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-light-blue to-blue-400 animate-pulse-glow">
+            PARA TU VEHÍCULO
+          </span>
         </h1>
-        <p className="text-xl md:text-2xl text-brand-slate mb-10 max-w-3xl mx-auto font-light leading-relaxed px-4">
+        <p className="text-lg md:text-2xl lg:text-3xl text-brand-slate mb-8 md:mb-10 max-w-3xl mx-auto font-light leading-relaxed px-4 animate-slide-up" style={{animationDelay: '0.2s'}}>
           El centro de detallado automotriz más exclusivo de Bogotá.
-          <span className="block mt-2 text-brand-cyan font-medium font-orbitron text-sm md:text-base tracking-normal md:tracking-[0.2em]">CERÁMICOS 9H • PPF • RESTAURACIÓN PREMIUM</span>
+          <span className="block mt-3 md:mt-4 text-brand-cyan font-medium font-orbitron text-base md:text-lg tracking-normal md:tracking-[0.2em]">
+            CERÁMICOS 9H • PPF • RESTAURACIÓN PREMIUM
+          </span>
         </p>
 
-        <div className="flex flex-col md:flex-row gap-6 justify-center">
-          <a href="https://wa.me/573124730909?text=Hola,%20deseo%20agendar%20una%20cita%20VIP%20para%20mi%20vehículo." target="_blank" rel="noopener noreferrer" className="btn-primary">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center animate-slide-up" style={{animationDelay: '0.4s'}}>
+          <a href="https://wa.me/573124730909?text=Hola,%20deseo%20agendar%20una%20cita%20VIP%20para%20mi%20vehículo." target="_blank" rel="noopener noreferrer" className="btn-primary text-base md:text-lg py-3 md:py-4 px-8 md:px-10">
             Agendar Cita VIP
           </a>
-          <a href="#services" className="bg-transparent border border-brand-slate/30 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-white/5 hover:border-brand-cyan hover:text-brand-cyan transition-all duration-300 backdrop-blur-sm">
+          <a href="#services" className="btn-secondary text-base md:text-lg py-3 md:py-4 px-8 md:px-10">
             Explorar Servicios
           </a>
         </div>
 
-        <div className="mt-16 flex flex-wrap justify-center gap-4 md:gap-12 text-xs md:text-sm text-brand-slate/60 font-medium tracking-normal md:tracking-widest uppercase font-orbitron">
-          <div className="flex items-center gap-3">
-            <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full shadow-[0_0_10px_#06b6d4]"></span> Bogotá, Col
+        <div className="mt-12 md:mt-16 flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-brand-slate/70 font-medium tracking-normal md:tracking-widest uppercase font-orbitron animate-slide-up" style={{animationDelay: '0.6s'}}>
+          <div className="flex items-center gap-2 glass-dark py-2 px-4 md:py-3 md:px-6 rounded-full">
+            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-cyan rounded-full shadow-[0_0_10px_#06b6d4] animate-pulse"></span> Bogotá, Colombia
           </div>
-          <div className="flex items-center gap-3">
-            <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full shadow-[0_0_10px_#06b6d4]"></span> Certificado IGL
+          <div className="flex items-center gap-2 glass-dark py-2 px-4 md:py-3 md:px-6 rounded-full">
+            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-light-blue rounded-full shadow-[0_0_10px_#4cc9f0] animate-pulse" style={{animationDelay: '0.5s'}}></span> Certificado IGL
           </div>
-          <div className="flex items-center gap-3">
-            <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full shadow-[0_0_10px_#06b6d4]"></span> Garantía Real
+          <div className="flex items-center gap-2 glass-dark py-2 px-4 md:py-3 md:px-6 rounded-full">
+            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-cyan rounded-full shadow-[0_0_10px_#06b6d4] animate-pulse" style={{animationDelay: '1s'}}></span> Garantía Real
+          </div>
+        </div>
+        
+        {/* Flecha indicadora de scroll */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-brand-light-blue/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-brand-light-blue/70 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </div>
