@@ -229,12 +229,15 @@ export default function Home() {
       <footer className="py-12 relative z-10 border-t border-white/20 bg-white/5 backdrop-blur-lg">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center gap-8 mb-8">
-            <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors">Instagram</a>
-            <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors">WhatsApp</a>
-            <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors">TikTok</a>
+            <a href="https://www.instagram.com/beautyandcomfortbogota/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-purple-600 transition-colors font-medium hover:scale-110 transform duration-300">Instagram</a>
+            <a href="https://wa.me/573223524103" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-purple-600 transition-colors font-medium hover:scale-110 transform duration-300">WhatsApp</a>
+            <a href="https://www.tiktok.com/@beautyandcomfortco" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-purple-600 transition-colors font-medium hover:scale-110 transform duration-300">TikTok</a>
           </div>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-sm mb-4">
             © 2024 Beauty & Comfort Recovery House. Todos los derechos reservados.
+          </p>
+          <p className="text-gray-500 text-xs font-medium tracking-wide">
+            Diseñado y desarrollado por <a href="https://purrpurr.dev" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 transition-colors font-bold">purrpurr.dev</a>
           </p>
         </div>
       </footer>
